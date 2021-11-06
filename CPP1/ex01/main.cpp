@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/06 14:02:52 by ablondel          #+#    #+#             */
-/*   Updated: 2021/11/06 15:53:31 by ablondel         ###   ########.fr       */
+/*   Created: 2021/11/06 14:08:42 by ablondel          #+#    #+#             */
+/*   Updated: 2021/11/06 16:39:07 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(void)
+int	main(int ac, char **av)
 {
-    this->name = "";
-}
+	Zombie	*zombies;
+	int		i;
 
-Zombie::Zombie ( std::string name )
-{
-    this->name = name;
-	std::cout << this->name << "> BraiiiiiiinnnzzzZ...\n";
-}
-
-Zombie::~Zombie ( void )
-{
-    std::cout << this->name << "> is dead...\n";
+	i = 0;
+	zombies = zombieHorde(5, "Goulish creature");
+	while (i < 5)
+	{
+		zombies[i].announce();
+		i++;
+	}
+	delete[](zombies);
 }
