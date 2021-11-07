@@ -5,23 +5,23 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/11/02 21:09:44 by ablondel          #+#    #+#              #
-#    Updated: 2021/11/06 18:10:56 by ablondel         ###   ########.fr        #
+#    Created: 2021/11/06 16:44:52 by ablondel          #+#    #+#              #
+#    Updated: 2021/11/06 18:03:38 by ablondel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC =		clang++
+CC = clang++
 
-CFLAGS =	-Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 
-SRC =		megaphone.cpp
+SRC = 	main.cpp \
 
-OBJ =		$(SRC:.cpp=.o)
+OBJ =	$(SRC:.cpp=.o)
  
-NAME =		megaphone
+NAME = PointersTest
 
 $(NAME):	$(OBJ)
-			$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 all:		$(NAME)
 
@@ -33,4 +33,4 @@ fclean:		clean
 
 re:			fclean all
 
-.PHONY:		all clean fclean re
+.PHONY: all clean fclean re

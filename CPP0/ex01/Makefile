@@ -6,28 +6,31 @@
 #    By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/03 10:56:39 by ablondel          #+#    #+#              #
-#    Updated: 2021/11/04 14:18:46 by ablondel         ###   ########.fr        #
+#    Updated: 2021/11/06 18:11:02 by ablondel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = clang++
+CC =		clang++
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS =	-Wall -Wextra -Werror
 
-SRC = phonebook.cpp
+SRC = 		phonebook.cpp
+
+OBJ =		$(SRC:.cpp=.o)
  
-NAME = phonebook
+NAME =		Phonebook
 
-$(NAME):		
-	$(CC) $(CFLAGS) -Iphonebook.hpp $(SRC) -o $(NAME)
+$(NAME):	$(OBJ)
+			$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 all:		$(NAME)
 
 clean:
-			rm -f $(NAME)
+			rm -f $(OBJ)
 
 fclean:		clean
+			rm -f $(NAME)
 
 re:			fclean all
 
-.PHONY: all clean fclean re
+.PHONY:		all clean fclean re

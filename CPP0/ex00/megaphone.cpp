@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 01:03:55 by ablondel          #+#    #+#             */
-/*   Updated: 2021/11/02 21:39:56 by ablondel         ###   ########.fr       */
+/*   Updated: 2021/11/06 18:08:57 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ int		main(int ac, char **av)
 		putchar('\n');
 	}
 	else
-		std::cout << "* LOUND AND UNBEARABLE NOISE *\n";
+		std::cout << "* LOUND AND UNBEARABLE NOISE *" << std::endl;
 	return (0);
 }
