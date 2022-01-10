@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 10:57:22 by ablondel          #+#    #+#             */
-/*   Updated: 2021/11/06 18:15:05 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/10 12:05:32 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	add_contact(int index, phonebook *add)
 	void	select_contact(phonebook add)
 	{
 		int	x = -1;
-		std::cout << "View informations by entering the contact number" << std::endl;
+		std::cout << "View informations by entering the contact index" << std::endl;
 		std::cin >> x;
 		while (std::cin.fail() || (x < 1 || x > add.max) || !x)
 		{
