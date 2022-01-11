@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 12:15:47 by ablondel          #+#    #+#             */
-/*   Updated: 2021/11/06 16:41:56 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/11 14:13:31 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Zombie
 	private:
 		std::string name;
 	public:
-		Zombie(void);
+		Zombie() {}
 		Zombie(std::string name);
 		~Zombie(void);
 		void	announce(void);

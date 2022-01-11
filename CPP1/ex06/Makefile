@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/11/06 14:48:29 by ablondel          #+#    #+#              #
-#    Updated: 2022/01/11 14:00:27 by ablondel         ###   ########.fr        #
+#    Created: 2022/01/10 16:18:28 by ablondel          #+#    #+#              #
+#    Updated: 2022/01/11 14:15:04 by ablondel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,13 +15,11 @@ CC = clang++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = 	main.cpp \
-		Zombie.cpp \
-		newZombie.cpp \
-		randomChump.cpp \
+		Karen.cpp \
 
 OBJ =	$(SRC:.cpp=.o)
  
-NAME = Zombies
+NAME = karenFilter
 
 $(NAME):	$(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)

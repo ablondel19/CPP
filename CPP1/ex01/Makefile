@@ -6,13 +6,13 @@
 #    By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/06 14:48:29 by ablondel          #+#    #+#              #
-#    Updated: 2021/11/06 15:41:47 by ablondel         ###   ########.fr        #
+#    Updated: 2022/01/11 14:06:26 by ablondel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = clang++
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = 	main.cpp \
 		Zombie.cpp \
