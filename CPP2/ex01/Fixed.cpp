@@ -6,35 +6,32 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 15:40:03 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/12 21:41:38 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/13 14:45:08 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-const int	Fixed::rb = 8;
+const int	Fixed::_fractBits = 8;
 
 Fixed::Fixed()
 {
 	std::cout << "Default constructor called" << std::endl;
+	this->_fixedPoint = 0;
 	return ;
 }
 
 Fixed::Fixed(const int n)
 {
 	std::cout << "Int constructor called" << std::endl;
+	setRawBits(n << this->_fractBits);
 	return ;
 }
 
 Fixed::Fixed(const float f)
 {
 	std::cout << "Float constructor called" << std::endl;
-	return ;
-}
-
-Fixed::Fixed(Fixed &Fixed)
-{
-	std::cout << "Object constructor called" << std::endl;
+	this->setRawBits((int)roundf(f * (1 << this->_fractBits)));
 	return ;
 }
 
@@ -44,41 +41,51 @@ Fixed::~Fixed()
 	return ;
 }
 
-Fixed::Fixed( const Fixed& f )
+Fixed::Fixed( Fixed &obj )
 {
-	std::cout << "Copy constructor called" << std::endl;
+	*this = obj;
 	return ;
 }
 
-Fixed & Fixed::operator=( const Fixed &Fixed )
+Fixed::Fixed( const Fixed& obj )
+{
+	std::cout << "Copy constructor called" << std::endl;
+	*this = obj;
+	return ;
+}
+
+Fixed & Fixed::operator=( const Fixed &obj )
 {
 	std::cout << "Assignation operator called" << std::endl;
+	setRawBits(obj.getRawBits());
 	return (*this);
 }
 
-std::ostream	&operator<<( std::ostream &o , Fixed const &Fixed)
+std::ostream	&operator<<( std::ostream &o , Fixed const &obj)
 {
-	o << Fixed.toFloat();
+	o << obj.toFloat();
 	return (o);
 }
 
-int	Fixed::getValue( void ) const
+int		Fixed::getRawBits( void ) const
 {
-	return (this->r);
+	return (this->_fixedPoint);
 }
 
-int	Fixed::setValue( int const r )
+void	Fixed::setRawBits( int const raw )
 {
-	this->r = r;
-	return (r);
-}
-
-float	Fixed::toFloat(void) const
-{
-	return ((float)this->r / (float)(1 << 8));
+	this->_fixedPoint = raw;
 }
 
 int		Fixed::toInt(void) const
 {
-	return (roundf(this->r * (1 << 8)));
+	return (this->getRawBits() >> this->_fractBits);
+}
+
+float	Fixed::toFloat(void) const
+{
+	float f;
+
+	f = (float)this->getRawBits() / (1 << this->_fractBits);
+	return (f);
 }

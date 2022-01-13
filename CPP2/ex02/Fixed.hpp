@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 15:40:17 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/13 13:39:44 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/13 20:03:22 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,34 @@ class Fixed
 		Fixed( int n );
 		Fixed( float f );
 		Fixed( Fixed &obj );
-		Fixed( const Fixed& obj );
+		Fixed( const Fixed &obj );
 		~Fixed();
-		Fixed 			&operator=( const Fixed &obj );
+
+
 		int				getRawBits( void ) const;
 		void			setRawBits( int const raw );
 		float			toFloat( void ) const;
 		int				toInt( void ) const;
+
+		static 			Fixed &max(Fixed &obj1, Fixed &obj2 );
+		static const 	Fixed &max(const Fixed &obj1, const Fixed &obj2 );
+		static 			Fixed &min(Fixed &obj1, Fixed &obj2 );
+		static const 	Fixed &min(const Fixed &obj1, const Fixed &obj2 );
+		
+
+		Fixed 			&operator=( const Fixed &obj );
+		bool			operator>( const Fixed &obj ) const;
+		bool 			operator<( const Fixed &obj ) const;
+		bool 			operator>=( const Fixed &obj ) const;
+		bool 			operator<=( const Fixed &obj ) const;
+		bool 			operator==( const Fixed &obj ) const;
+		bool 			operator!=( const Fixed &obj ) const;
+		Fixed 			operator+( const Fixed &obj );
+		Fixed 			operator-( const Fixed &obj );
+		Fixed 			operator*( const Fixed &obj );
+		Fixed 			operator/( const Fixed &obj );
+		Fixed 			operator++();
+		Fixed 			operator++( int );
 };
 
 std::ostream	&operator<<( std::ostream &o, Fixed const &obj );
