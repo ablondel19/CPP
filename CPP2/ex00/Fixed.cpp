@@ -6,13 +6,13 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 15:40:03 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/12 15:06:12 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/14 10:14:32 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-const int	Fixed::fb = 8;
+const int	Fixed::_fractBits = 8;
 
 Fixed::Fixed()
 {

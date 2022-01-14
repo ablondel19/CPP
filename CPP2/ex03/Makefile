@@ -6,7 +6,7 @@
 #    By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/11 15:42:07 by ablondel          #+#    #+#              #
-#    Updated: 2022/01/14 10:18:06 by ablondel         ###   ########.fr        #
+#    Updated: 2022/01/14 16:23:26 by ablondel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,10 +16,11 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = 	main.cpp \
 		Fixed.cpp \
+		Point.cpp \
 
 OBJ =	$(SRC:.cpp=.o)
  
-NAME = Fixed
+NAME = BSP
 
 $(NAME):	$(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)

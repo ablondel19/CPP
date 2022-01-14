@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 15:40:17 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/12 14:55:43 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/14 10:14:25 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 class Fixed
 {
 	private:
-		int					f;
-		const static int 	fb;
+		int					_fixedPoint;
+		const static int 	_fractBits;
 	public:
 		Fixed();
 		Fixed( const Fixed& f );

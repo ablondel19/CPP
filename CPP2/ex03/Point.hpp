@@ -1,25 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/11 15:42:02 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/14 10:14:34 by ablondel         ###   ########.fr       */
+/*   Created: 2022/01/14 11:36:57 by ablondel          #+#    #+#             */
+/*   Updated: 2022/01/14 13:23:02 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef POINT_HPP
+#define POINT_HPP
 #include "Fixed.hpp"
 
-int		main(void) 
+class Point
 {
-	Fixed a;
-	Fixed b( a );
-	Fixed c;
-	c = b;
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
-	return (0);
-}
+private:
+	const Fixed _x;
+	const Fixed _y;
+public:
+	Point();
+	Point( const Fixed x, const Fixed y );
+	Point( const Point& p );
+	~Point();
+	
+	Point	&operator=( Point &obj );
+	
+	Fixed	getX( void ) const;
+	Fixed	getY( void ) const;
+	bool	bsp( Point const a, Point const b, Point const c, Point const p);
+};
+
+#endif

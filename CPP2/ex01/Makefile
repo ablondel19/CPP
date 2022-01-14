@@ -6,13 +6,13 @@
 #    By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/11 15:42:07 by ablondel          #+#    #+#              #
-#    Updated: 2022/01/11 15:43:28 by ablondel         ###   ########.fr        #
+#    Updated: 2022/01/14 10:15:21 by ablondel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = clang++
 
-CFLAGS = -g -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = 	main.cpp \
 		Fixed.cpp \
