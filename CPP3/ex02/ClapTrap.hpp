@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 16:33:09 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/15 13:36:03 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/15 13:13:18 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ class ClapTrap
 	
 	public:
 		ClapTrap();
-		ClapTrap( std::string name );
+		ClapTrap(std::string name);
 		ClapTrap( const ClapTrap &obj );
 		~ClapTrap();
 		
-		void		attack( std::string const & target );
-		void		takeDamage( unsigned int amount );
-		void		beRepaired( unsigned int amount );
+		void		attack(std::string const & target);
+		void		takeDamage(unsigned int amount);
+		void		beRepaired(unsigned int amount);
 		void		debug();
 };
 

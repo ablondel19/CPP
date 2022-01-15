@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 16:32:45 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/15 13:35:57 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/15 13:01:29 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int		main(void)
 	ClapTrap a("Yooo");
 	//a.debug();
 	ScavTrap b("Yaaa");
-	// b.debug();
+	//b.debug();
 	a.attack("Yaaa");
 	b.takeDamage(10);
 	b.beRepaired(10);
