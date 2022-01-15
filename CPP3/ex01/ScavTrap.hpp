@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 12:16:17 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/15 12:42:19 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/15 12:55:39 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ public:
 	ScavTrap(std::string name);
 	~ScavTrap();
 	void	guardGate();
+	
 };
 
 #endif
