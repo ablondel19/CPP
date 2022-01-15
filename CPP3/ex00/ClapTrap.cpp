@@ -5,6 +5,7 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
+<<<<<<< HEAD
 /*   Created: 2022/01/14 16:33:56 by ablondel          #+#    #+#             */
 /*   Updated: 2022/01/15 11:15:03 by ablondel         ###   ########.fr       */
 /*                                                                            */
@@ -36,3 +37,11 @@ void	ClapTrap::beRepaired(unsigned int amount)
 {
 	std::cout << "ClapTrap " << this->_name << " has repaired " << amount << " energy points." << std::endl;
 }
+=======
+/*   Created: 2022/01/14 18:36:54 by ablondel          #+#    #+#             */
+/*   Updated: 2022/01/14 18:37:14 by ablondel         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "ClapTrap.hpp"
+>>>>>>> 5b11c590485fb508168da3f934ce1bf9450f7964
