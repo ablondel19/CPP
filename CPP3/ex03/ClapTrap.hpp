@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 16:33:09 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/15 13:13:18 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/15 20:40:07 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ class ClapTrap
 	private:
 
 	protected:
-		std::string _name;
 		int			_hitPoints;
 		int			_energyPoints;
 		int			_attackDamage;
 	
 	public:
+		std::string _name;
 		ClapTrap();
 		ClapTrap(std::string name);
 		ClapTrap( const ClapTrap &obj );
