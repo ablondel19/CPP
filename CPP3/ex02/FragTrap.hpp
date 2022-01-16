@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 13:46:34 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/15 13:59:32 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/16 21:36:18 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class FragTrap: public ClapTrap
 		FragTrap();
 		FragTrap( std::string name );
 		FragTrap( const FragTrap &obj );
+		FragTrap	&operator=( const FragTrap &obj );
 		~FragTrap();
 		
 		void		highFiveGuys( void );

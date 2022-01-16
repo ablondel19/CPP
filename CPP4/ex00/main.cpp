@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 17:05:45 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/16 19:48:24 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/16 19:52:04 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ class WrongAnimal
 		
 	protected:
 		std::string _type;
-		
 	public:
 		WrongAnimal() : _type("some weird animal") {};
 		WrongAnimal( const WrongAnimal &obj ) { *this = obj; };

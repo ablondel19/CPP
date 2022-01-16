@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 16:33:09 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/15 13:13:18 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/16 21:35:52 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ class ClapTrap
 		ClapTrap();
 		ClapTrap(std::string name);
 		ClapTrap( const ClapTrap &obj );
+		ClapTrap	&operator=( const ClapTrap &obj );
 		~ClapTrap();
 		
 		void		attack(std::string const & target);

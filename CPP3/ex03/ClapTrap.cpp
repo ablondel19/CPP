@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 16:33:56 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/16 15:35:04 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/16 21:37:52 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,12 @@ ClapTrap::ClapTrap( const ClapTrap &obj )
 {
 	*this = obj;
 	std::cout << "ClapTrap copy constructor >> name: " << this->_name << std::endl;
+}
+
+ClapTrap	&ClapTrap::operator=( const ClapTrap &obj )
+{
+	*this = obj;
+	return (*this);
 }
 
 ClapTrap::~ClapTrap()

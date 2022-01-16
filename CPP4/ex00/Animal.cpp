@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 17:26:24 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/16 19:34:36 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/16 21:41:44 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,12 @@ Animal::Animal( const Animal &obj )
 {
 	*this = obj;
 	std::cout << "Animal copy constructor" << std::endl;
+}
+
+Animal	&Animal::operator=( const Animal &obj )
+{
+	*this = obj;
+	return (*this);
 }
 
 Animal::~Animal()
@@ -51,6 +57,12 @@ Dog::Dog( const Dog &obj )
 	std::cout << "Dog copy constructor" << std::endl;
 }
 
+Dog	&Dog::operator=( const Dog &obj )
+{
+	*this = obj;
+	return (*this);
+}
+
 Dog::~Dog()
 {
 	std::cout << "Dog default destructor" << std::endl;
@@ -71,6 +83,11 @@ Cat::Cat( const Cat &obj )
 {
 	*this = obj;
 	std::cout << "Cat copy constructor" << std::endl;
+}
+Cat	&Cat::operator=( const Cat &obj )
+{
+	*this = obj;
+	return (*this);
 }
 
 Cat::~Cat()

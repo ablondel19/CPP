@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 12:16:17 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/16 14:11:15 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/16 21:36:40 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class ScavTrap: public ClapTrap
 		ScavTrap();
 		ScavTrap( std::string name );
 		ScavTrap( const ScavTrap &obj );
+		ScavTrap	&operator=( const ScavTrap &obj );
 		~ScavTrap();
 		
 		void		guardGate();

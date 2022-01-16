@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 13:55:49 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/15 14:01:06 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/16 21:36:09 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,12 @@ FragTrap::FragTrap( const FragTrap &obj )
 {
 	*this = obj;
 	std::cout << "FragTrap copy constructor >> name: " << this->_name << std::endl;
+}
+
+FragTrap	&FragTrap::operator=( const FragTrap &obj )
+{
+	*this = obj;
+	return (*this);
 }
 
 FragTrap::~FragTrap()

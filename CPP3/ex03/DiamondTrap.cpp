@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 19:51:05 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/16 15:31:41 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/16 21:38:19 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,12 @@ DiamondTrap::DiamondTrap( const ClapTrap &obj )
 {
 	this->_clap_name = ClapTrap::_name;
 	std::cout << "DiamondTrap param constructor >> name: " << std::endl;
+}
+
+DiamondTrap	&DiamondTrap::operator=( const DiamondTrap &obj )
+{
+	*this = obj;
+	return (*this);
 }
 
 DiamondTrap::~DiamondTrap()

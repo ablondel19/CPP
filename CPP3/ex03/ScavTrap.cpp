@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 12:15:41 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/16 13:47:56 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/16 21:39:43 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,12 @@ ScavTrap::ScavTrap( const ScavTrap &obj )
 {
 	*this = obj;
 	std::cout << "ScavTrap copy constructor >> name: " << this->_name << std::endl;
+}
+
+ScavTrap	&ScavTrap::operator=( const ScavTrap &obj )
+{
+	*this = obj;
+	return (*this);
 }
 
 ScavTrap::~ScavTrap()

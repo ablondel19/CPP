@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 16:33:56 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/16 14:08:41 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/16 21:31:50 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,12 @@ ClapTrap::ClapTrap()
 ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
 	std::cout << "ClapTrap param constructor >> name: " << this->_name << std::endl;
+}
+
+ClapTrap	&ClapTrap::operator=( const ClapTrap &obj )
+{
+	*this = obj;
+	return (*this);
 }
 
 ClapTrap::~ClapTrap()
