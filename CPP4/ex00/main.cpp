@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 17:05:45 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/16 19:41:28 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/16 19:48:24 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class WrongAnimal
 			std::cout << "Hi dude i'm Kevin concombre!" << std::endl;
 		};
 };
-class WrongCat: virtual public WrongAnimal
+class WrongCat: public WrongAnimal
 {
 	private:
 
@@ -66,9 +66,9 @@ int main()
 
 	const WrongAnimal* someWrongAnimal = new WrongAnimal();
 	const WrongAnimal* someWrongCat = new WrongCat();
-	std::cout << "The wrong cat makes : ";
+	std::cout << "The wrong cat without virtual makes : ";
 	someWrongCat->makeSound();
-	std::cout << "The wrong animal makes : ";
+	std::cout << "The wrong animal without virtual makes : ";
 	someWrongAnimal->makeSound();
 	std::cout << "The wrong cat as a wrong cat makes : ";
 	WrongCat C;
