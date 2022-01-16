@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 16:32:45 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/15 13:35:57 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/16 14:06:19 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 
 int		main(void)
 {
-	ClapTrap a("Yooo");
+	ClapTrap a("Clap");
 	//a.debug();
-	ScavTrap b("Yaaa");
+	ScavTrap b("Scav");
 	// b.debug();
-	a.attack("Yaaa");
+	a.attack("Scav");
 	b.takeDamage(10);
 	b.beRepaired(10);
-	b.attack("Yooo");
+	b.attack("Clap");
 	a.takeDamage(100);
 	a.beRepaired(10);
 	b.guardGate();

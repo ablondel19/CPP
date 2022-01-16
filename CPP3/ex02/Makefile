@@ -6,7 +6,7 @@
 #    By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/14 16:32:32 by ablondel          #+#    #+#              #
-#    Updated: 2022/01/15 12:14:12 by ablondel         ###   ########.fr        #
+#    Updated: 2022/01/16 14:02:18 by ablondel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,10 +17,11 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 SRC = 	main.cpp \
 		ClapTrap.cpp \
 		ScavTrap.cpp \
+		FragTrap.cpp \
 
 OBJ =	$(SRC:.cpp=.o)
  
-NAME = ScavTrap
+NAME = FragTrap
 
 $(NAME):	$(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)

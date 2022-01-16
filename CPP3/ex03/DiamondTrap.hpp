@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 19:52:39 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/15 20:36:36 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/16 15:15:08 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,20 +23,17 @@ class DiamondTrap: public FragTrap, public ScavTrap
 	protected:
 		std::string _clap_name;
 	public:
+		using ClapTrap::_name;
+		using FragTrap::_hitPoints;
+		using ScavTrap::_energyPoints;
+		using FragTrap::_attackDamage;
+		using ScavTrap::attack;
 		DiamondTrap();
-		DiamondTrap( std::string clapName );
+		DiamondTrap( std::string name );
 		DiamondTrap( const DiamondTrap &obj );
 		DiamondTrap( const ClapTrap &obj );
 		~DiamondTrap();
+		void	whoAmI();
 };
-
-DiamondTrap::DiamondTrap()
-{
-}
-
-DiamondTrap::~DiamondTrap()
-{
-}
-
 
 #endif

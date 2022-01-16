@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 13:46:34 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/15 20:42:07 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/16 13:47:51 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 class FragTrap: virtual public ClapTrap
 {
 	private:
+		std::string _name;
 	
 	protected:
 	

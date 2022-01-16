@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 13:55:49 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/15 14:01:06 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/16 15:40:29 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ FragTrap::~FragTrap()
 
 void	FragTrap::highFiveGuys()
 {
-	std::cout << "FragTrap : High five guys!" << std::endl;
+	std::cout << "FragTrap " << this->_name << " High five guys!" << std::endl;
 }
 
 void	FragTrap::attack(std::string const & target)

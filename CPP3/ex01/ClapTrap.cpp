@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 16:33:56 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/15 12:56:07 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/16 14:08:41 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 {
 	std::cout << "ClapTrap " << this->_name << " has repaired " << amount << " energy points." << std::endl;
 }
-
+/*
 void	ClapTrap::debug()
 {
 	std::cout << "\nDEBUG" << std::endl;
@@ -51,3 +51,4 @@ void	ClapTrap::debug()
 	std::cout << "attack damage " << this->_attackDamage << std::endl;
 	std::cout << "!DEBUG\n" << std::endl;
 }
+*/

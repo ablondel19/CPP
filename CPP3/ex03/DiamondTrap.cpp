@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 19:51:05 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/15 20:40:09 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/16 15:31:41 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,10 @@ DiamondTrap::DiamondTrap()
 	std::cout << "DiamondTrap default constructor" << std::endl;
 }
 
-DiamondTrap::DiamondTrap( std::string clapName ) : ClapTrap(clapName + "_clap_name"), ..., ..., _name(clapName)
+DiamondTrap::DiamondTrap( std::string name ) : ClapTrap( name + "_clap_name" ), ScavTrap( name + "_clap_name" ), FragTrap( name + "_clap_name" )
 {
-	
-	this->_clap_name = clapName;
-
+	this->_clap_name = name;
+	std::cout << "DiamondTrap param constructor >> name: " << this->_clap_name << std::endl;
 }
 
 DiamondTrap::DiamondTrap( const DiamondTrap &obj )
@@ -32,17 +31,17 @@ DiamondTrap::DiamondTrap( const DiamondTrap &obj )
 
 DiamondTrap::DiamondTrap( const ClapTrap &obj )
 {
-	this->_clap_name = obj.ClapTrap::_name;
+	this->_clap_name = ClapTrap::_name;
 	std::cout << "DiamondTrap param constructor >> name: " << std::endl;
-}
-
-DiamondTrap::DiamondTrap( const DiamondTrap &obj )
-{
-	*this = obj;
-	std::cout << "DiamondTrap copy constructor >> name: " << this->_clap_name << std::endl;
 }
 
 DiamondTrap::~DiamondTrap()
 {
 	std::cout << "DiamondTrap destructor >> name: " << this->_clap_name << std::endl;
+}
+
+void	DiamondTrap::whoAmI()
+{
+	std::cout << "Diamond name : " << this->_clap_name << std::endl;
+	std::cout << "Clap name : " << this->_name << std::endl;
 }

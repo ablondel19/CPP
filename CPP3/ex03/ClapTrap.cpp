@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 16:33:56 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/15 14:01:44 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/16 15:35:04 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ ClapTrap::ClapTrap( const ClapTrap &obj )
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "ClapTrap destructor >> name: " << this->_name << std::endl;
+	std::cout << "ClapTrap destructor" << std::endl;
 }
 
 void	ClapTrap::attack(std::string const & target)
