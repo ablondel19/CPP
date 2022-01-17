@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 17:05:45 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/17 09:45:55 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/17 11:27:32 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,8 @@ int main()
 	const Animal* someAnimal = new Animal();
 	const Animal* someDog = new Dog();
 	const Animal* someCat = new Cat();
-	std::cout << someDog->getType() << " type class" << std::endl;
-	std::cout << someCat->getType() << " type class" << std::endl;
+	std::cout << someDog->getType() << "getType() = type class" << std::endl;
+	std::cout << someCat->getType() << "getType() = type class" << std::endl;
 	std::cout << "The dog makes : ";
 	someDog->makeSound();
 	std::cout << "The cat makes : ";
