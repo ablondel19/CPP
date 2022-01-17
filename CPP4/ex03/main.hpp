@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 19:06:45 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/17 20:13:28 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/17 23:52:54 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <iostream>
 #include <string>
 
-class	AMateria
+class	AMateria: virtual public ICharacter
 {
 	private:
 		std::string _type;
@@ -23,8 +23,6 @@ class	AMateria
 		
 	public:
 		AMateria(); // AMateria constructor
-		AMateria Ice(); // _type("ice")
-		AMateria Cure(); // _type("cure")
 		AMateria( std::string const & type ); // Parametric constructor
 		AMateria( const AMateria &obj ); // Basic copy constructor
 		AMateria &operator=( const AMateria &obj ); // Assignation AMateria obj
@@ -34,6 +32,85 @@ class	AMateria
 		virtual void use( ICharacter& target );
 };
 
+class	Ice: virtual public AMateria
+{
+	private:
+		std::string _type;
+	protected:
+		/* data */
+	public:
+		Ice() : _type("ice") {
+			std::cout << "Ice default destructor" << std::endl;
+		};
+		
+		Ice( const Ice &obj ) {
+			std::cout << "Ice default copy constructor" << std::endl;
+			*this = obj;
+		};
+		
+		Ice &operator=( const Ice &obj ) {
+			std::cout << "Ice default copy constructor" << std::endl;
+			*this = obj;
+			return *this;
+		}
+
+		~Ice() {
+			delete this;
+			std::cout << "Ice default destructor" << std::endl;
+		};
+
+		virtual AMateria* clone() const { // Returns an instance of the real Materia's type
+			AMateria *newMateria = new Ice();
+			return newMateria;
+		};
+
+		virtual std::string const & getName() const {}; // Returns the name of the character
+		virtual void equip( AMateria* m ) {}; // Equip a new materia
+		virtual void unequip( int idx ) {}; // Discard an existing Materia
+		virtual void use( int idx, ICharacter& target ) {}; // displays 
+		//Ice: "* shoots an ice bolt at NAME *" || Cure: "* heals NAME’s wounds *"
+		//(Of course, replace NAME by the name of the Character given as parameter.)
+};
+
+class	Cure: virtual public AMateria
+{
+	private:
+		std::string _type;
+	protected:
+		/* data */
+	public:
+		Cure() : _type("cure") {
+			std::cout << "Cure default constructor" << std::endl;
+		};
+
+		Cure( const Cure &obj ) {
+			std::cout << "Cure default copy constructor" << std::endl;
+			*this = obj;
+		};
+		
+		Cure &operator=( const Cure &obj ) {
+			std::cout << "Cure default assignation operator" << std::endl;
+			*this = obj;
+			return *this;
+		}
+
+		~Cure()	{
+			delete this;
+			std::cout << "Cure default destructor" << std::endl;
+		};
+
+		virtual AMateria* clone() const	{ // Returns an instance of the real Materia's type
+			AMateria *newMateria = new Cure();
+			return newMateria;
+		};
+
+		virtual std::string const & getName() const {}; // Returns the name of the character
+		virtual void equip( AMateria* m ) {}; // Equip a new materia
+		virtual void unequip( int idx ) {}; // Discard an existing Materia
+		virtual void use( int idx, ICharacter& target ) {}; // displays 
+		//Ice: "* shoots an ice bolt at NAME *" || Cure: "* heals NAME’s wounds *"
+		//(Of course, replace NAME by the name of the Character given as parameter.)
+};
 
 class ICharacter
 {
@@ -47,7 +124,7 @@ class ICharacter
 		//(Of course, replace NAME by the name of the Character given as parameter.)
 };
 
-class	Character: virtual public AMateria, virtual public ICharacter
+class	Character: virtual public AMateria
 {
 	//The Character possesses an inventory of 4 Materia at most, empty at the start. He’ll
 	//equip the Materia in slots 0 to 3, in this order.
