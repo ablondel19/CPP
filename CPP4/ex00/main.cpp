@@ -6,11 +6,13 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 17:05:45 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/16 19:52:04 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/17 09:45:55 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
 
 class WrongAnimal
 {

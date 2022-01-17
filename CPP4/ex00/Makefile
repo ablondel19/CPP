@@ -6,7 +6,7 @@
 #    By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/16 17:05:08 by ablondel          #+#    #+#              #
-#    Updated: 2022/01/16 17:05:41 by ablondel         ###   ########.fr        #
+#    Updated: 2022/01/17 09:46:50 by ablondel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,8 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = 	main.cpp \
 		Animal.cpp \
+		Dog.cpp \
+		Cat.cpp \
 
 OBJ =	$(SRC:.cpp=.o)
  
