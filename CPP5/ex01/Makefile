@@ -5,19 +5,21 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/11/02 21:09:44 by ablondel          #+#    #+#              #
-#    Updated: 2022/01/19 16:34:11 by ablondel         ###   ########.fr        #
+#    Created: 2022/01/19 16:38:12 by ablondel          #+#    #+#              #
+#    Updated: 2022/01/19 19:31:39 by ablondel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CFLAGS =	-Wall -Wextra -Werror
 CXX =		clang++ $(CFLAGS)
 
-SRC =		megaphone.cpp
+SRC = 	main.cpp \
+		Bureaucrat.cpp \
+		Form.cpp \
 
-OBJ =		$(SRC:.cpp=.o)
+OBJ =	$(SRC:.cpp=.o)
  
-NAME =		megaphone
+NAME = Form
 
 $(NAME):	$(OBJ)
 			$(CXX) $(CFLAGS) $(OBJ) -o $(NAME)
@@ -32,4 +34,4 @@ fclean:		clean
 
 re:			fclean all
 
-.PHONY:		all clean fclean re
+.PHONY: all clean fclean re

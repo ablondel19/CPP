@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 16:26:31 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/19 14:03:42 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/19 16:33:46 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ Character::Character() : _idx(0)
 
 Character::Character( std::string name )
 {
+	//std::cout << "__Character parametric constructor__" << std::endl;
 	this->_name = name;
 	this->_idx = 0;
 	for (size_t i = 0; i <= 3; i++)
@@ -35,6 +36,7 @@ Character::Character( std::string name )
 
 Character::Character( const Character &obj )
 {
+	//std::cout << "__Character copy constructor__" << std::endl;
 	if (this != &obj) 
 	{
     	this->_name = obj.getName();
@@ -51,10 +53,12 @@ Character::Character( const Character &obj )
 
 Character &Character::operator=( Character const &obj ) 
 {
-    if (this != &obj) {
+    if (this != &obj)
+	{
         this->_name = obj.getName();
         this->~Character();
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 4; i++)
+		{
             AMateria const *temp = obj._inventory[i];
             if (temp)
                 this->_inventory[i] = temp->clone();
