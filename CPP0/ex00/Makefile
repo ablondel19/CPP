@@ -6,13 +6,12 @@
 #    By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/02 21:09:44 by ablondel          #+#    #+#              #
-#    Updated: 2021/11/06 18:10:56 by ablondel         ###   ########.fr        #
+#    Updated: 2022/01/19 15:44:39 by ablondel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC =		clang++
-
 CFLAGS =	-Wall -Wextra -Werror
+CXX =		clang++ $(CFLAGS)
 
 SRC =		megaphone.cpp
 
@@ -21,7 +20,7 @@ OBJ =		$(SRC:.cpp=.o)
 NAME =		megaphone
 
 $(NAME):	$(OBJ)
-			$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+			$(CXX) $(CFLAGS) $(OBJ) -o $(NAME)
 
 all:		$(NAME)
 

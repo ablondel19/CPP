@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 14:03:11 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/19 14:01:53 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/19 15:50:39 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Cure::Cure( const Cure &obj )
 Cure &Cure::operator=( const Cure &obj )
 {
 	//std::cout << "__Cure default assignation operator__" << std::endl;
-	*this = obj;
+	this->_type = obj._type;
 	return *this;
 }
 

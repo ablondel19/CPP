@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 17:05:45 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/17 11:54:12 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/19 15:31:53 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ class WrongCat: public WrongAnimal
 	
 	public:
 		WrongCat() {};
-		WrongCat( const WrongCat &obj) {};
+		WrongCat( const WrongCat &obj) { this->_type = obj._type; };
 		~WrongCat() {};
 		void	makeSound( void ) const 
 		{

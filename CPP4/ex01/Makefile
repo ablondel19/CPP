@@ -6,13 +6,12 @@
 #    By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/16 17:05:08 by ablondel          #+#    #+#              #
-#    Updated: 2022/01/17 15:20:17 by ablondel         ###   ########.fr        #
+#    Updated: 2022/01/19 15:33:54 by ablondel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = c++
-
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS =	-Wall -Wextra -Werror
+CXX =		clang++ $(CFLAGS)
 
 SRC = 	main.cpp \
 		Animal.cpp \
@@ -25,7 +24,7 @@ OBJ =	$(SRC:.cpp=.o)
 NAME = Brain
 
 $(NAME):	$(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+			$(CXX) $(CFLAGS) $(OBJ) -o $(NAME)
 
 all:		$(NAME)
 

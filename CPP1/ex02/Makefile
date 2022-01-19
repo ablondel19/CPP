@@ -6,13 +6,13 @@
 #    By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/06 16:44:52 by ablondel          #+#    #+#              #
-#    Updated: 2022/01/11 14:14:51 by ablondel         ###   ########.fr        #
+#    Updated: 2022/01/19 14:49:56 by ablondel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = clang++
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS =	-Wall -Wextra -Werror
+CXX =		clang++ $(CFLAGS)
 
 SRC = 	main.cpp \
 
@@ -21,7 +21,7 @@ OBJ =	$(SRC:.cpp=.o)
 NAME = PointersTest
 
 $(NAME):	$(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+			$(CXX) $(CFLAGS) $(OBJ) -o $(NAME)
 
 all:		$(NAME)
 

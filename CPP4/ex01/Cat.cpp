@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 09:43:33 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/17 17:52:53 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/19 15:39:40 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,22 +21,22 @@ Cat::Cat() : _Brain(new Brain())
 
 Cat::Cat( const Cat &obj )
 {
-	*this = obj;
-	std::cout << "Cat copy constructor" << std::endl;
+	if (this != &obj) 
+	{
+    	this->_type = obj.getType();
+		this->_Brain = obj._Brain;
+    }
 }
 
-void	Cat::deepCopy( const Cat &obj )
+Cat &Cat::operator=( Cat const &obj ) 
 {
-	delete this->_Brain;
-	this->_Brain = new Brain();
-	std::cout << "Cat deep copy constructor" << std::endl;
-}
-
-Cat	&Cat::operator=( const Cat &obj )
-{
-	if (this != &obj)
-		deepCopy(obj);
-	return (*this);
+    if (this != &obj)
+	{
+        this->_type = obj.getType();
+		this->_Brain = obj._Brain;
+        this->~Cat();
+    }
+    return *this;
 }
 
 Cat::~Cat()

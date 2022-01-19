@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 09:39:41 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/17 09:47:41 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/19 15:32:43 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Dog::Dog( const Dog &obj )
 
 Dog	&Dog::operator=( const Dog &obj )
 {
-	*this = obj;
+	this->_type = obj._type;
 	return (*this);
 }
 

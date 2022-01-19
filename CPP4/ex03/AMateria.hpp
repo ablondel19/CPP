@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 13:37:35 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/19 11:44:27 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/19 15:57:32 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class	AMateria
 		virtual std::string const & getType() const;
 		virtual ~AMateria();
 		virtual AMateria* clone() const = 0;
-		virtual void use( ICharacter& target ) {};
+		virtual void use( ICharacter& target );
 		
 };
 

@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 14:14:04 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/19 14:02:03 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/19 15:50:22 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Ice::Ice( const Ice &obj )
 Ice &Ice::operator=( const Ice &obj )
 {
 	//std::cout << "__Ice default assignation operator__" << std::endl;
-	*this = obj;
+	this->_type = obj._type;
 	return *this;
 }
 

@@ -6,13 +6,12 @@
 #    By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/17 23:40:12 by ablondel          #+#    #+#              #
-#    Updated: 2022/01/19 13:30:58 by ablondel         ###   ########.fr        #
+#    Updated: 2022/01/19 15:48:59 by ablondel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = c++
-
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
+CFLAGS =	-Wall -Wextra -Werror
+CXX =		clang++ $(CFLAGS)
 
 SRC = 	main.cpp \
 		AMateria.cpp \
@@ -26,7 +25,7 @@ OBJ =	$(SRC:.cpp=.o)
 NAME = Materia
 
 $(NAME):	$(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+			$(CXX) $(CFLAGS) $(OBJ) -o $(NAME)
 
 all:		$(NAME)
 

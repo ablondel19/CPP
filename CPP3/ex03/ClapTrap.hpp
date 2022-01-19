@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 16:33:09 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/16 21:38:01 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/19 15:29:35 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ class ClapTrap
 		void		takeDamage(unsigned int amount);
 		void		beRepaired(unsigned int amount);
 		void		debug();
+		std::string getName() const;
 };
 
 #endif

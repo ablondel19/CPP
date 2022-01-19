@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 09:43:33 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/17 10:32:40 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/19 15:32:49 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Cat::Cat( const Cat &obj )
 }
 Cat	&Cat::operator=( const Cat &obj )
 {
-	*this = obj;
+	this->_type = obj._type;
 	return (*this);
 }
 

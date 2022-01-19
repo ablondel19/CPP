@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 16:18:42 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/10 17:52:56 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/19 14:52:01 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,12 +53,12 @@ int		main(int ac, char **av)
 	std::string res = "";
 	std::string s1 = av[2];
 	std::string s2 = av[3];
-	for (int i = 0; i < data.length(); i++)
+	for (size_t i = 0; i < data.length(); i++)
 	{
-		int k = 0;
+		size_t k = 0;
 		if (data[i] == s1[k] && i + s1.length() <= data.length())
 		{
-			int j;
+			size_t j;
 			for (j = i; j < i + s1.length(); j++)
 			{
 				if (data[j] != s1[k])

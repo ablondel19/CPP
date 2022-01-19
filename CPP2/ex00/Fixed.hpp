@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 15:40:17 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/14 10:14:25 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/19 15:00:16 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Fixed
 		Fixed();
 		Fixed( const Fixed& f );
 		~Fixed();
-		void operator=( const Fixed &Fixed );
+		void operator=( const Fixed &obj );
 		int getRawBits( void ) const;
 		int setRawBits( int const raw );
 };

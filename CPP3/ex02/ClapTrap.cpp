@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 16:33:56 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/16 21:35:41 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/19 15:17:21 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,10 @@ ClapTrap::ClapTrap( const ClapTrap &obj )
 
 ClapTrap	&ClapTrap::operator=( const ClapTrap &obj )
 {
-	*this = obj;
+	this->_name = obj._name;
+	this->_hitPoints = obj._hitPoints;
+	this->_energyPoints = obj._energyPoints;
+	this->_attackDamage = obj._attackDamage;
 	return (*this);
 }
 

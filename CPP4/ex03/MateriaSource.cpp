@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 12:00:23 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/19 14:00:39 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/19 15:55:08 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,38 @@ MateriaSource::MateriaSource() : _idx(0)
 
 MateriaSource::MateriaSource( const MateriaSource &obj )
 {
-	//std::cout << "__MateriaSource Copy constructor__" << std::endl;
-	*this = obj;
+	if (this != &obj) 
+	{
+    	this->_idx = obj._idx;
+		for (int i = 0; i < 4; i++)
+		{
+        	AMateria const *temp = obj._recipes[i];
+        	if (temp)
+        	    this->_recipes[i] = temp->clone();
+        	else
+        	    this->_recipes[i] = NULL;
+			this->_materias[i] = obj._materias[i];
+        }
+    }
 }
 
-MateriaSource	&MateriaSource::operator=( const MateriaSource &obj )
+MateriaSource &MateriaSource::operator=( MateriaSource const &obj ) 
 {
-	//std::cout << "__MateriaSource Assignation operator__" << std::endl;
-	*this = obj;
-	return (*this);
+    if (this != &obj)
+	{
+        this->_idx = obj._idx;
+        this->~MateriaSource();
+        for (int i = 0; i < 4; i++)
+		{
+            AMateria const *temp = obj._recipes[i];
+            if (temp)
+                this->_recipes[i] = temp->clone();
+            else
+                this->_recipes[i] = NULL;
+			this->_materias[i] = obj._materias[i];
+        }
+    }
+    return *this;
 }
 
 MateriaSource::~MateriaSource()

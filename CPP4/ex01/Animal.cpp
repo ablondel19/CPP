@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 17:26:24 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/17 17:52:36 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/19 15:35:14 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Animal::Animal( const Animal &obj )
 
 Animal	&Animal::operator=( const Animal &obj )
 {
-	*this = obj;
+	this->_type = obj._type;
 	return (*this);
 }
 

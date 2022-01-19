@@ -6,13 +6,12 @@
 #    By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/03 10:56:39 by ablondel          #+#    #+#              #
-#    Updated: 2021/11/06 18:05:23 by ablondel         ###   ########.fr        #
+#    Updated: 2022/01/19 14:45:46 by ablondel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = clang++
-
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS =	-Wall -Wextra -Werror
+CXX =		clang++ $(CFLAGS)
 
 SRC = 	Accounts.cpp \
 		tests.cpp \
@@ -22,7 +21,7 @@ OBJ =	$(SRC:.cpp=.o)
 NAME = Banksters
 
 $(NAME):	$(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+			$(CXX) $(CFLAGS) $(OBJ) -o $(NAME)
 
 all:		$(NAME)
 

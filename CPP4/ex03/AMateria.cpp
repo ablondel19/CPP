@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 13:53:12 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/18 22:21:49 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/19 15:58:01 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ AMateria::AMateria( const AMateria &obj )
 AMateria	&AMateria::operator=( const AMateria &obj )
 {
 	//std::cout << "__AMateria Assignation operator__" << std::endl;
-	*this = obj;
+	this->_type = obj._type;
 	return (*this);
 }
 
@@ -44,4 +44,9 @@ std::string const &AMateria::getType() const
 AMateria::~AMateria()
 {
 	//std::cout << "__AMateria Default destructor__" << std::endl;
+}
+
+void AMateria::use( ICharacter& target )
+{
+	(void)target;
 }

@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 12:15:41 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/16 21:39:43 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/19 15:16:17 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,10 @@ ScavTrap::ScavTrap( const ScavTrap &obj )
 
 ScavTrap	&ScavTrap::operator=( const ScavTrap &obj )
 {
-	*this = obj;
+	this->_name = obj._name;
+	this->_hitPoints = obj._hitPoints;
+	this->_energyPoints = obj._energyPoints;
+	this->_attackDamage = obj._attackDamage;
 	return (*this);
 }
 

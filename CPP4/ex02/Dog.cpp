@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 09:39:41 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/17 17:53:25 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/19 15:46:00 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,22 +21,22 @@ Dog::Dog() : _Brain(new Brain())
 
 Dog::Dog( const Dog &obj )
 {
-	*this = obj;
-	std::cout << "Dog copy constructor" << std::endl;
+	if (this != &obj) 
+	{
+    	this->_type = obj.getType();
+		this->_Brain = obj._Brain;
+    }
 }
 
-void	Dog::deepCopy( const Dog &obj )
+Dog &Dog::operator=( Dog const &obj ) 
 {
-	delete this->_Brain;
-	this->_Brain = new Brain();
-	std::cout << "Dog deep copy constructor" << std::endl;
-}
-
-Dog	&Dog::operator=( const Dog &obj )
-{
-	if (this != &obj)
-		deepCopy(obj);
-	return (*this);
+    if (this != &obj)
+	{
+        this->_type = obj.getType();
+		this->_Brain = obj._Brain;
+        this->~Dog();
+    }
+    return *this;
 }
 
 Dog::~Dog()

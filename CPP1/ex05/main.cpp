@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 16:18:42 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/10 20:16:30 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/19 14:52:57 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include "Karen.hpp"
 
 
-int		main(int ac, char **av)
+int		main(void)
 {
 	Karen o;
 

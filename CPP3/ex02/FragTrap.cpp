@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 13:55:49 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/16 21:36:09 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/19 15:17:28 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,10 @@ FragTrap::FragTrap( const FragTrap &obj )
 
 FragTrap	&FragTrap::operator=( const FragTrap &obj )
 {
-	*this = obj;
+	this->_name = obj._name;
+	this->_hitPoints = obj._hitPoints;
+	this->_energyPoints = obj._energyPoints;
+	this->_attackDamage = obj._attackDamage;
 	return (*this);
 }
 
