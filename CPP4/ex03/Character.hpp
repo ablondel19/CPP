@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 13:44:20 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/19 13:14:10 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/19 13:49:17 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ class	Character: virtual public ICharacter
 	public:
 		Character();
 		Character( std::string name );
-		void deepCopy( const Character &obj );
 		Character( const Character &obj );
 		Character &operator=( const Character &obj );
 		~Character();

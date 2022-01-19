@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 16:26:31 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/19 13:28:36 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/19 14:03:42 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,33 +33,41 @@ Character::Character( std::string name )
 	}
 }
 
-void Character::deepCopy( const Character &obj )
-{
-	//std::cout << "__Character Copy constructor__" << std::endl;
-	Character *neo = new Character( obj._name );
-	neo->_idx = obj._idx;
-	for (size_t i = 0; i <= 3; i++)
-	{
-		neo->_inventory[i] = obj._inventory[i];
-	}
-}
-
 Character::Character( const Character &obj )
 {
-	deepCopy(obj);
+	if (this != &obj) 
+	{
+    	this->_name = obj.getName();
+		for (int i = 0; i < 4; i++)
+		{
+        	AMateria const *temp = obj._inventory[i];
+        	if (temp)
+        	    this->_inventory[i] = temp->clone();
+        	else
+        	    this->_inventory[i] = NULL;
+        }
+    }
 }
 
-Character	&Character::operator=( const Character &obj )
+Character &Character::operator=( Character const &obj ) 
 {
-	//std::cout << "__Character Assignation operator__" << std::endl;
-	if (this != &obj)
-		deepCopy(obj);
-	return (*this);
+    if (this != &obj) {
+        this->_name = obj.getName();
+        this->~Character();
+        for (int i = 0; i < 4; i++) {
+            AMateria const *temp = obj._inventory[i];
+            if (temp)
+                this->_inventory[i] = temp->clone();
+            else
+                this->_inventory[i] = NULL;
+        }
+    }
+    return *this;
 }
 
 Character::~Character()
 {
-	std::cout << "__Character Default destructor__" << std::endl;
+	//std::cout << "__Character Default destructor__" << std::endl;
 	for (size_t i = 0; i <= 3; i++)
 	{
 		if (this->_inventory[i] != NULL)
