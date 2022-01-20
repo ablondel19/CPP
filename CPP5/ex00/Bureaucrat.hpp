@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 16:38:49 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/19 19:31:00 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/20 12:50:00 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define BUREAUCRAT_HPP
 #include <iostream>
 #include <string>
+#include <exception>
 
 class	Bureaucrat
 {
@@ -33,18 +34,24 @@ class	Bureaucrat
 		void		promotion( void );
 		void		demotion( void );
 		
-		class GradeTooHighException
-		{
-			public:
-				GradeTooHighException() {}
-				~GradeTooHighException() {}
-		};
-		class GradeTooLowException
-		{
-			public:
-				GradeTooLowException() {}
-				~GradeTooLowException() {}
-		};
+		class GradeTooHighException: virtual public std::exception
+	{
+		private:
+		public:
+			const char *_msg;
+			GradeTooHighException() : _msg("BUREAUCRAT GRADE IS TOO HIGH!") {}
+			virtual ~GradeTooHighException() throw() {};
+			const char *what() const throw() { return _msg; }
+	};
+	class GradeTooLowException: virtual public std::exception
+	{
+		private:
+		public:
+			const char *_msg;
+			GradeTooLowException() : _msg("BUREAUCRAT GRADE IS TOO LOW!") {}
+			virtual ~GradeTooLowException() throw() {}
+			const char *what() const throw() { return _msg; }
+	};
 };
 
 std::ostream	&operator<<( std::ostream &o, Bureaucrat const &obj );

@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 16:46:23 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/19 19:30:57 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/20 12:49:00 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ Bureaucrat::Bureaucrat( const std::string &name, int grade ) : _name(name), _gra
 		if (grade > 150)
 			throw (Bureaucrat::GradeTooLowException());
 	}
-	catch(const Bureaucrat::GradeTooHighException)
+	catch(const Bureaucrat::GradeTooHighException &e )
 	{
-		std::cerr << "Maximum grade is 1." << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
-	catch(const Bureaucrat::GradeTooLowException)
+	catch(const Bureaucrat::GradeTooLowException &e)
 	{
-		std::cerr << "Minimum grade is 150." << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 }
 
