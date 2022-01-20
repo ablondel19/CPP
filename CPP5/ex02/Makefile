@@ -6,7 +6,7 @@
 #    By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/19 16:38:12 by ablondel          #+#    #+#              #
-#    Updated: 2022/01/19 19:31:39 by ablondel         ###   ########.fr        #
+#    Updated: 2022/01/20 22:19:10 by ablondel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,9 @@ CXX =		clang++ $(CFLAGS)
 SRC = 	main.cpp \
 		Bureaucrat.cpp \
 		Form.cpp \
+		ShrubberyCreationForm.cpp \
+		RobotomyRequestForm.cpp \
+		PresidentialPardonForm.cpp \
 
 OBJ =	$(SRC:.cpp=.o)
  

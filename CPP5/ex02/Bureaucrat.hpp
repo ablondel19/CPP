@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 16:38:49 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/20 17:54:03 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/20 21:02:31 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ class	Bureaucrat
 		int			getGrade( void ) const;
 		void		promotion( void );
 		void		demotion( void );
-		void		signForm( Form f );
+		void		signForm( Form &f );
 		
 	class GradeTooHighException: virtual public std::exception
 	{

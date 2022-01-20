@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 19:33:50 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/20 13:36:19 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/20 22:31:53 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ Form::Form( std::string name, int minGradeToSign, int minGradeToExec ) : _formNa
 	try
 	{
 		if (minGradeToSign < 1)
-			throw ( Form::GradeTooHighException("CONSTRUCTOR: MAXIMUM GRADE TO SIGN IS 1.") );
+			throw ( Form::GradeTooHighException("FORM: MAXIMUM GRADE TO SIGN IS 1.") );
 		if (minGradeToSign > 150)
-			throw ( Form::GradeTooLowException("CONSTRUCTOR: MINIMUM GRADE TO SIGN IS 150.") );
+			throw ( Form::GradeTooLowException("FORM: MINIMUM GRADE TO SIGN IS 150.") );
 	}
 	catch ( const Form::GradeTooHighException &e )
 	{
@@ -39,11 +39,11 @@ Form::Form( std::string name, int minGradeToSign, int minGradeToExec ) : _formNa
 	{
 		if (minGradeToExec < 1)
 		{
-			throw ( Form::GradeTooHighException("CONSTRUCTOR: MAXIMUM GRADE TO EXECUTE IS 1.") );
+			throw ( Form::GradeTooHighException("FORM: MAXIMUM GRADE TO EXECUTE IS 1.") );
 		}
 		if (minGradeToExec > 150)
 		{
-			throw ( Form::GradeTooLowException("CONSTRUCTOR: MINIMUM GRADE TO EXEC IS 150.") );
+			throw ( Form::GradeTooLowException("FORM: MINIMUM GRADE TO EXEC IS 150.") );
 		}
 	}
 	catch ( const Form::GradeTooHighException &e )
@@ -66,7 +66,7 @@ Form	&Form::operator=( const Form &obj )
 	//std::cout << "__Form Assignation operator__" << std::endl;
 	(std::string)this->_formName = obj.getFormName();
 	this->_isSigned = obj.getFormState();
-	const_cast<int&>(this->_minGradeToExec) = obj.getMinGradeToSign();
+	const_cast<int&>(this->_minGradeToSign) = obj.getMinGradeToSign();
 	const_cast<int&>(this->_minGradeToExec) = obj.getMinGradeToExec();
 	return (*this);
 }
@@ -107,12 +107,12 @@ std::ostream	&operator<<( std::ostream &o, Form const &obj )
 	return (o);
 }
 
-void	Form::beSigned( Bureaucrat obj )
+void	Form::beSigned( Bureaucrat &obj )
 {
 	try
 	{
-		if (obj.getGrade() > this->_minGradeToSign)
-			throw ( Form::GradeTooHighException("BESIGNED: BUREAUCRAT LEVEL TOO LOW TO SIGN!") );
+		if (obj.getGrade() > this->getMinGradeToSign())
+			throw ( Form::GradeTooHighException("FORM: BUREAUCRAT LEVEL TOO LOW TO SIGN!") );
 	}
 	catch ( const Form::GradeTooHighException &e )
 	{

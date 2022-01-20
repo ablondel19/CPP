@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 16:46:23 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/20 13:37:32 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/20 21:05:53 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ void		Bureaucrat::demotion( void )
 		this->_grade++;
 }
 
-void		Bureaucrat::signForm(Form f)
+void		Bureaucrat::signForm(Form &f)
 {
 	try
 	{
