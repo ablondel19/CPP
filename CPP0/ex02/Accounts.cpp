@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 14:30:19 by ablondel          #+#    #+#             */
-/*   Updated: 2021/11/06 18:28:34 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/21 15:28:21 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,19 +24,6 @@ int		Account::_totalNbWithdrawals;
 
 int			x = 1;
 std::string last_output[10];
-/*
-struct tm {
-   int tm_sec;   // seconds of minutes from 0 to 61
-   int tm_min;   // minutes of hour from 0 to 59
-   int tm_hour;  // hours of day from 0 to 24
-   int tm_mday;  // day of month from 1 to 31
-   int tm_mon;   // month of year from 0 to 11
-   int tm_year;  // year since 1900
-   int tm_wday;  // days since sunday
-   int tm_yday;  // days since January 1st
-   int tm_isdst; // hours of daylight savings time
-}
-*/
 
 int		Account::getNbAccounts(void)
 {
@@ -190,17 +177,17 @@ void	Account::_displayTimestamp(void)
 	time_t now = time(0);
 	tm *ltm = localtime(&now);
 	std::cout << "[";
-	std::cout << 1900 + ltm->tm_year;//YEAR
+	std::cout << 1900 + ltm->tm_year;
 	std::cout << std::setfill('0') << std::setw(2);
-	std::cout << 1 + ltm->tm_mon;//MONTH
+	std::cout << 1 + ltm->tm_mon;
 	std::cout << std::setfill('0') << std::setw(2);
-	std::cout << ltm->tm_mday;//DAY
+	std::cout << ltm->tm_mday;
 	std::cout << "_";
 	std::cout << std::setfill('0') << std::setw(2);
-	std::cout << ltm->tm_hour;//HOURS
+	std::cout << ltm->tm_hour;
 	std::cout << std::setfill('0') << std::setw(2);
-	std::cout << ltm->tm_min;//MINUTES
+	std::cout << ltm->tm_min;
 	std::cout << std::setfill('0') << std::setw(2);
-	std::cout << ltm->tm_sec;//SECONDS
+	std::cout << ltm->tm_sec;
 	std::cout << "] ";
 }
