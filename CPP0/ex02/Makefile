@@ -6,7 +6,7 @@
 #    By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/03 10:56:39 by ablondel          #+#    #+#              #
-#    Updated: 2022/01/19 14:45:46 by ablondel         ###   ########.fr        #
+#    Updated: 2022/01/22 18:18:19 by ablondel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ OBJ =	$(SRC:.cpp=.o)
 NAME = Banksters
 
 $(NAME):	$(OBJ)
-			$(CXX) $(CFLAGS) $(OBJ) -o $(NAME)
+			$(CXX) $(OBJ) -o $(NAME)
 
 all:		$(NAME)
 

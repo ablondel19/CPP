@@ -6,7 +6,7 @@
 #    By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/02 21:09:44 by ablondel          #+#    #+#              #
-#    Updated: 2022/01/19 16:34:11 by ablondel         ###   ########.fr        #
+#    Updated: 2022/01/22 18:18:13 by ablondel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ OBJ =		$(SRC:.cpp=.o)
 NAME =		megaphone
 
 $(NAME):	$(OBJ)
-			$(CXX) $(CFLAGS) $(OBJ) -o $(NAME)
+			$(CXX) $(OBJ) -o $(NAME)
 
 all:		$(NAME)
 
