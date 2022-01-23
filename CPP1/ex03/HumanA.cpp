@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/22 19:06:10 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/23 16:34:01 by ablondel         ###   ########.fr       */
+/*   Created: 2022/01/10 13:37:41 by ablondel          #+#    #+#             */
+/*   Updated: 2022/01/22 13:52:10 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Conv.hpp"
+#include "HumanA.hpp"
+#include "Weapon.hpp"
 
-int		main( int ac, char **av )
+HumanA::HumanA( std::string name, Weapon &club ) : _Weapon (club)
 {
-	if (ac == 2)
-	{
-		static_cast<void>(static_cast<char>(Conv((std::string)av[1])));
-		static_cast<void>(static_cast<int>(Conv((std::string)av[1])));
-		static_cast<void>(static_cast<float>(Conv((std::string)av[1])));
-		static_cast<void>(static_cast<double>(Conv((std::string)av[1])));
-	}
+	//std::cout << "HumanA parametric constructor" << std::endl;
+	this->_name = name;
+}
+
+HumanA::~HumanA()
+{
+	//std::cout << "HumanA default destructor" << std::endl;
+}
+
+void    HumanA::attack( void )
+{
+	std::cout << this->_name << " attacks with his " << _Weapon.getType() << std::endl;
 }

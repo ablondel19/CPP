@@ -6,7 +6,7 @@
 #    By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/11 15:42:07 by ablondel          #+#    #+#              #
-#    Updated: 2022/01/19 14:55:08 by ablondel         ###   ########.fr        #
+#    Updated: 2022/01/23 17:22:23 by ablondel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ OBJ =	$(SRC:.cpp=.o)
 NAME = Fixed
 
 $(NAME):	$(OBJ)
-			$(CXX) $(CFLAGS) $(OBJ) -o $(NAME)
+			$(CXX) $(OBJ) -o $(NAME)
 
 all:		$(NAME)
 

@@ -6,7 +6,7 @@
 #    By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/14 16:32:32 by ablondel          #+#    #+#              #
-#    Updated: 2022/01/19 15:29:26 by ablondel         ###   ########.fr        #
+#    Updated: 2022/01/23 17:21:48 by ablondel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ OBJ =	$(SRC:.cpp=.o)
 NAME = DiamondTrap
 
 $(NAME):	$(OBJ)
-			$(CXX) $(CFLAGS) $(OBJ) -o $(NAME)
+			$(CXX) $(OBJ) -o $(NAME)
 
 all:		$(NAME)
 

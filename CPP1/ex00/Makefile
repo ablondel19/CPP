@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/01/16 17:05:08 by ablondel          #+#    #+#              #
-#    Updated: 2022/01/23 17:21:37 by ablondel         ###   ########.fr        #
+#    Created: 2021/11/06 14:48:29 by ablondel          #+#    #+#              #
+#    Updated: 2022/01/22 16:37:10 by ablondel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,13 +14,13 @@ CFLAGS =	-Wall -Wextra -Werror
 CXX =		clang++ $(CFLAGS)
 
 SRC = 	main.cpp \
-		Animal.cpp \
-		Dog.cpp \
-		Cat.cpp \
+		Zombie.cpp \
+		newZombie.cpp \
+		randomChump.cpp \
 
 OBJ =	$(SRC:.cpp=.o)
  
-NAME = Animal
+NAME = Zombies
 
 $(NAME):	$(OBJ)
 			$(CXX) $(OBJ) -o $(NAME)

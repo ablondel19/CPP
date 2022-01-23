@@ -6,7 +6,7 @@
 #    By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/19 16:38:12 by ablondel          #+#    #+#              #
-#    Updated: 2022/01/20 22:19:10 by ablondel         ###   ########.fr        #
+#    Updated: 2022/01/23 17:20:51 by ablondel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ OBJ =	$(SRC:.cpp=.o)
 NAME = Form
 
 $(NAME):	$(OBJ)
-			$(CXX) $(CFLAGS) $(OBJ) -o $(NAME)
+			$(CXX) $(OBJ) -o $(NAME)
 
 all:		$(NAME)
 

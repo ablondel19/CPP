@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   karen.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/22 19:06:10 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/23 16:34:01 by ablondel         ###   ########.fr       */
+/*   Created: 2022/01/10 19:08:13 by ablondel          #+#    #+#             */
+/*   Updated: 2022/01/10 20:26:07 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Conv.hpp"
+#ifndef KAREN_H
+#define KAREN_H
+#include <iostream>
 
-int		main( int ac, char **av )
+class Karen
 {
-	if (ac == 2)
-	{
-		static_cast<void>(static_cast<char>(Conv((std::string)av[1])));
-		static_cast<void>(static_cast<int>(Conv((std::string)av[1])));
-		static_cast<void>(static_cast<float>(Conv((std::string)av[1])));
-		static_cast<void>(static_cast<double>(Conv((std::string)av[1])));
-	}
-}
+	private:
+		void	debug(void);
+		void	info(void);
+		void	warning(void);
+		void	error(void);
+	public:
+		Karen();
+		~Karen();
+		void	complain(std::string level);
+};
+
+
+
+#endif

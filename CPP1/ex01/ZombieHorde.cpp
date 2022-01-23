@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/22 19:06:10 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/23 16:34:01 by ablondel         ###   ########.fr       */
+/*   Created: 2021/11/06 12:22:44 by ablondel          #+#    #+#             */
+/*   Updated: 2022/01/22 13:31:55 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Conv.hpp"
+#include "Zombie.hpp"
 
-int		main( int ac, char **av )
+Zombie	*zombieHorde( int N, std::string name )
 {
-	if (ac == 2)
+	int	i = 0;
+	Zombie *zombies = new Zombie[N];
+
+	while (i < N)
 	{
-		static_cast<void>(static_cast<char>(Conv((std::string)av[1])));
-		static_cast<void>(static_cast<int>(Conv((std::string)av[1])));
-		static_cast<void>(static_cast<float>(Conv((std::string)av[1])));
-		static_cast<void>(static_cast<double>(Conv((std::string)av[1])));
+		zombies[i] = Zombie(name);
+		i++;
 	}
+	return (zombies);
 }

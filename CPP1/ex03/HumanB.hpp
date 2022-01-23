@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/22 19:06:10 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/23 16:34:01 by ablondel         ###   ########.fr       */
+/*   Created: 2022/01/10 13:37:55 by ablondel          #+#    #+#             */
+/*   Updated: 2022/01/22 13:52:40 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Conv.hpp"
+#ifndef HUMANB_HPP
+#define HUMANB_HPP
+#include "Weapon.hpp"
 
-int		main( int ac, char **av )
+class HumanB
 {
-	if (ac == 2)
-	{
-		static_cast<void>(static_cast<char>(Conv((std::string)av[1])));
-		static_cast<void>(static_cast<int>(Conv((std::string)av[1])));
-		static_cast<void>(static_cast<float>(Conv((std::string)av[1])));
-		static_cast<void>(static_cast<double>(Conv((std::string)av[1])));
-	}
-}
+    private:
+		std::string	_name;
+		Weapon		*_Weapon;
+     public:
+		HumanB( std::string name );
+		void		attack( void );
+        void        setWeapon( Weapon &club );
+		~HumanB();
+};
+
+#endif

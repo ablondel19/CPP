@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   newZombie.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/22 19:06:10 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/23 16:34:01 by ablondel         ###   ########.fr       */
+/*   Created: 2021/11/06 12:22:44 by ablondel          #+#    #+#             */
+/*   Updated: 2022/01/22 13:25:47 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Conv.hpp"
+#include "Zombie.hpp"
+#include <string>
 
-int		main( int ac, char **av )
+Zombie	*newZombie( std::string name )
 {
-	if (ac == 2)
-	{
-		static_cast<void>(static_cast<char>(Conv((std::string)av[1])));
-		static_cast<void>(static_cast<int>(Conv((std::string)av[1])));
-		static_cast<void>(static_cast<float>(Conv((std::string)av[1])));
-		static_cast<void>(static_cast<double>(Conv((std::string)av[1])));
-	}
+	Zombie *zombie = new Zombie(name);
+	return (zombie);
 }

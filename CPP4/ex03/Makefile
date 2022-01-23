@@ -6,7 +6,7 @@
 #    By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/17 23:40:12 by ablondel          #+#    #+#              #
-#    Updated: 2022/01/19 16:34:16 by ablondel         ###   ########.fr        #
+#    Updated: 2022/01/23 17:21:16 by ablondel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ OBJ =	$(SRC:.cpp=.o)
 NAME = Materia
 
 $(NAME):	$(OBJ)
-			$(CXX) $(CFLAGS) $(OBJ) -o $(NAME)
+			$(CXX) $(OBJ) -o $(NAME)
 
 all:		$(NAME)
 

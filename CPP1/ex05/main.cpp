@@ -5,20 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/22 19:06:10 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/23 16:34:01 by ablondel         ###   ########.fr       */
+/*   Created: 2022/01/10 16:18:42 by ablondel          #+#    #+#             */
+/*   Updated: 2022/01/22 14:00:13 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Conv.hpp"
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <string>
+#include "Karen.hpp"
 
-int		main( int ac, char **av )
+
+int		main()
 {
-	if (ac == 2)
-	{
-		static_cast<void>(static_cast<char>(Conv((std::string)av[1])));
-		static_cast<void>(static_cast<int>(Conv((std::string)av[1])));
-		static_cast<void>(static_cast<float>(Conv((std::string)av[1])));
-		static_cast<void>(static_cast<double>(Conv((std::string)av[1])));
-	}
+	Karen o;
+
+	o.complain("ERROR");
+	o.complain("WARNING");
+	o.complain("INFO");
+	o.complain("DEBUG");
+	o.complain("WHAT?");
 }

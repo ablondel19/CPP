@@ -5,20 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/22 19:06:10 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/23 16:34:01 by ablondel         ###   ########.fr       */
+/*   Created: 2021/11/06 16:45:06 by ablondel          #+#    #+#             */
+/*   Updated: 2022/01/10 13:36:00 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Conv.hpp"
+#include <iostream>
 
-int		main( int ac, char **av )
+int		main(void)
 {
-	if (ac == 2)
-	{
-		static_cast<void>(static_cast<char>(Conv((std::string)av[1])));
-		static_cast<void>(static_cast<int>(Conv((std::string)av[1])));
-		static_cast<void>(static_cast<float>(Conv((std::string)av[1])));
-		static_cast<void>(static_cast<double>(Conv((std::string)av[1])));
-	}
+	std::string s = "HI THIS IS BRAIN";
+	std::string *stringPTR = &s; // Pointer to string
+    std::string &stringREF = s; // Reference to string
+    std::cout << &s << std::endl; // Address using &
+    std::cout << stringPTR << std::endl; // Address using pointer
+    std::cout << &stringREF << std::endl; // Address using reference
+    std::cout << *stringPTR << std::endl; // String using pointer
+    std::cout << stringREF << std::endl; // String using reference
 }

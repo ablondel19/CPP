@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/01/16 17:05:08 by ablondel          #+#    #+#              #
-#    Updated: 2022/01/23 17:21:37 by ablondel         ###   ########.fr        #
+#    Created: 2022/01/10 13:38:03 by ablondel          #+#    #+#              #
+#    Updated: 2022/01/22 16:37:29 by ablondel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,13 +14,13 @@ CFLAGS =	-Wall -Wextra -Werror
 CXX =		clang++ $(CFLAGS)
 
 SRC = 	main.cpp \
-		Animal.cpp \
-		Dog.cpp \
-		Cat.cpp \
+		Weapon.cpp \
+		HumanA.cpp \
+		HumanB.cpp \
 
 OBJ =	$(SRC:.cpp=.o)
  
-NAME = Animal
+NAME = Unnecessary_violence
 
 $(NAME):	$(OBJ)
 			$(CXX) $(OBJ) -o $(NAME)

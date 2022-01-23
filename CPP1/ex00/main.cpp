@@ -5,20 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/22 19:06:10 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/23 16:34:01 by ablondel         ###   ########.fr       */
+/*   Created: 2021/11/06 14:08:42 by ablondel          #+#    #+#             */
+/*   Updated: 2022/01/22 13:26:00 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Conv.hpp"
+#include "Zombie.hpp"
 
-int		main( int ac, char **av )
+int main(int ac, char **av)
 {
-	if (ac == 2)
-	{
-		static_cast<void>(static_cast<char>(Conv((std::string)av[1])));
-		static_cast<void>(static_cast<int>(Conv((std::string)av[1])));
-		static_cast<void>(static_cast<float>(Conv((std::string)av[1])));
-		static_cast<void>(static_cast<double>(Conv((std::string)av[1])));
-	}
+    (void)ac;
+    Zombie	*zombie;
+    int		i;
+
+    i = 1;
+	zombie = NULL;
+    
+    while (av[i])
+    {
+        zombie = newZombie(av[i]);
+		randomChump(av[i]);
+        delete( zombie );
+        i++;
+    }
 }

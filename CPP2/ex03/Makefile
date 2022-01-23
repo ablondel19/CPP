@@ -6,7 +6,7 @@
 #    By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/11 15:42:07 by ablondel          #+#    #+#              #
-#    Updated: 2022/01/19 15:07:36 by ablondel         ###   ########.fr        #
+#    Updated: 2022/01/23 17:22:34 by ablondel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ OBJ =	$(SRC:.cpp=.o)
 NAME = BSP
 
 $(NAME):	$(OBJ)
-			$(CXX) $(CFLAGS) $(OBJ) -o $(NAME)
+			$(CXX) $(OBJ) -o $(NAME)
 
 all:		$(NAME)
 
