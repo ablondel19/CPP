@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/06 12:15:47 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/22 13:21:10 by ablondel         ###   ########.fr       */
+/*   Created: 2022/01/24 16:08:32 by ablondel          #+#    #+#             */
+/*   Updated: 2022/01/24 16:13:00 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-#define ZOMBIE_HPP
-# include <iostream>
-# include <iomanip>
+#ifndef ARRAY_HPP
+#define ARRAY_HPP
 
-class Zombie
+template < typename T >
+class	Array
 {
 	private:
-		std::string _name;
+		/* data */
+	protected:
+		/* data */
 	public:
-		Zombie();
-		Zombie( std::string name );
-		~Zombie();
-		void	announce( void );
-		
+		Array();
+		Array( unsigned int n );
+		Array( const Array &obj );
+		Array &operator=( const Array &obj );
+		~Array();
 };
 
-Zombie*	newZombie( std::string name );
-void 	randomChump( std::string name );
+
 
 #endif
