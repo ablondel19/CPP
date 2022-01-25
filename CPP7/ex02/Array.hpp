@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 16:08:32 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/24 23:54:51 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/25 15:06:43 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,31 +31,40 @@ class	Array
 		{
 			_t = new T[n];
 			this->_size = n;
-			for (unsigned i = 0; i < n; i++)
+			for (size_t i = 0; i < n; i++)
 			{
 				_t[i] = 0;
-				std::cout << "[" << _t[i] << "]";
 			}
-			std::cout << std::endl;
 		}
 		Array( const Array &obj )
 		{
-
+			*this = obj;
 		}
 		Array &operator=( const T &obj )
 		{
-			
+			T *tmp = new T[obj._size];
+			for (size_t i = 0; i < obj._size; i++)
+			{
+				tmp[i] = obj._t[i];
+			}
+			delete [] _t;
+			_t = tmp;
+			return _t;
 		}
 		T &operator[](T index)
 		{
-			if (index >= size)
-				std::cout << "Exception" << std::endl;
+			try
+			{
+				if (index >= 0 || index <= static_cast<int>(_size))
+					;
+			}
+			catch(const std::exception& e)
+			{
+				std::cerr << e.what() << '\n';
+			}
 			return _t[index];
 		}
-		~Array()
-		{
-			delete[] this->_t;
-		}
+		~Array() {}
 };
 
 
