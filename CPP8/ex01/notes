@@ -1,0 +1,9 @@
+shortestspan
+
+sort
+for each
+keep track of smallest difference
+
+longest span
+sort
+return last - first

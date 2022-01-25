@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 16:11:11 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/25 15:09:01 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/25 16:46:05 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int main(int, char**)
         ///////////////////////////////////////////////////////
         for (size_t i = 0; i < MAX_VAL; i++)
         {
-            std::cout << tmp[i] << " VS " << mirror[i] << std::endl;
+            std::cout << tmp[i] << " VS " << test[i] << std::endl;
         }
         ///////////////////////////////////////////////////////
     }
@@ -48,9 +48,9 @@ int main(int, char**)
     {
         numbers[-2] = 0;
     }
-    catch(const std::exception& e)
+    catch(const std::exception& oor)
     {
-        std::cerr << e.what() << '\n';
+        std::cerr << oor.what() << '\n';
     }
     try
     {
