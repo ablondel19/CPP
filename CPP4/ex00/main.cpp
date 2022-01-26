@@ -6,14 +6,14 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 17:05:45 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/19 15:31:53 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/26 17:32:18 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
-
+/*
 class WrongAnimal
 {
 	private:
@@ -45,14 +45,14 @@ class WrongCat: public WrongAnimal
 			std::cout << "Hi dude i'm Pepe the pew!" << std::endl;
 		};
 };
-
+*/
 int main()
 {
 	const Animal* someAnimal = new Animal();
 	const Animal* someDog = new Dog();
 	const Animal* someCat = new Cat();
-	std::cout << someDog->getType() << "getType() = type class" << std::endl;
-	std::cout << someCat->getType() << "getType() = type class" << std::endl;
+	std::cout << "someDog->getType() = " << someDog->getType() << std::endl;
+	std::cout << "someCat->getType() = " << someCat->getType() << std::endl;
 	std::cout << "The dog makes : ";
 	someDog->makeSound();
 	std::cout << "The cat makes : ";
@@ -62,7 +62,7 @@ int main()
 	delete someDog;
 	delete someCat;
 	delete someAnimal;
-
+/*
 	std::cout << "----------------WRONG-------------------" << std::endl;
 
 	const WrongAnimal* someWrongAnimal = new WrongAnimal();
@@ -74,4 +74,5 @@ int main()
 	std::cout << "The wrong cat as a wrong cat makes : ";
 	WrongCat C;
 	C.makeSound();
+*/
 }

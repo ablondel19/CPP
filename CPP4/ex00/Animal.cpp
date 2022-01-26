@@ -6,22 +6,21 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 17:26:24 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/19 15:32:21 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/26 17:38:26 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-Animal::Animal()
+Animal::Animal() : _type("some Animal")
 {
-	this->_type = "some Animal";
-	std::cout << "Animal default constructor" << std::endl;
+	//std::cout << "Animal default constructor" << std::endl;
 }
 
 Animal::Animal( const Animal &obj )
 {
 	*this = obj;
-	std::cout << "Animal copy constructor" << std::endl;
+	//std::cout << "Animal copy constructor" << std::endl;
 }
 
 Animal	&Animal::operator=( const Animal &obj )
@@ -32,7 +31,7 @@ Animal	&Animal::operator=( const Animal &obj )
 
 Animal::~Animal()
 {
-	std::cout << "Animal default destructor" << std::endl;
+	//std::cout << "Animal default destructor" << std::endl;
 }
 
 std::string	Animal::getType( void ) const

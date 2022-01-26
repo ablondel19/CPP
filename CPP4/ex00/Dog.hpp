@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 09:41:51 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/17 09:44:44 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/26 17:38:15 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,16 @@
 class Dog: virtual public Animal
 {
 	private:
-		
+		std::string _type;
 	protected:
 
 	public:
-		using Animal::_type;
 		Dog();
 		Dog( const Dog &obj );
 		Dog	&operator=( const Dog &obj );
 		~Dog();
-		virtual void	makeSound( void ) const;
+		virtual std::string		getType( void ) const;
+		virtual void			makeSound( void ) const;
 };
 
 #endif

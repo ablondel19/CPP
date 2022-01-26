@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 13:54:30 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/17 17:36:57 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/26 19:29:55 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define BRAIN_HPP
 #include <iostream>
 #include <string>
-//#include "Animal.hpp"
+#include "Animal.hpp"
 /*Deep copying
 
 One answer to this problem is to do a deep copy on any non-null pointers being copied. 
@@ -28,7 +28,6 @@ class	Brain//: public Animal
 	private:
 		std::string ideas[100];
 	protected:
-		Brain		*_Brain;
 	
 	public:
 		Brain();
