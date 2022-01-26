@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 19:06:22 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/19 14:02:16 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/26 23:57:36 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int		main( void )
 	AMateria* tmp;
 	tmp = src->createMateria("ice");
 	me->equip(tmp);
+	//me->unequip(0); // Ajouter une corbeille pour les Materias desequipees.
 	tmp = src->createMateria("cure");
 	me->equip(tmp);
 	ICharacter* bob = new Character("bob");

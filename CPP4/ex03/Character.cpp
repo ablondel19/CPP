@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 16:26:31 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/19 16:33:46 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/26 23:50:53 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,58 +15,39 @@
 Character::Character() : _idx(0)
 {
 	//std::cout << "__Character Default constructor__" << std::endl;
-	this->_name = "";
-	this->_idx = 0;
+	_name = "";
+	_idx = 0;
 	for (size_t i = 0; i <= 3; i++)
-	{
-		this->_inventory[i] = NULL;
-	}
+		_inventory[i] = NULL;
 }
 
 Character::Character( std::string name )
 {
 	//std::cout << "__Character parametric constructor__" << std::endl;
-	this->_name = name;
-	this->_idx = 0;
+	_name = name;
+	_idx = 0;
 	for (size_t i = 0; i <= 3; i++)
-	{
-		this->_inventory[i] = NULL;
-	}
+		_inventory[i] = NULL;
 }
 
 Character::Character( const Character &obj )
 {
 	//std::cout << "__Character copy constructor__" << std::endl;
-	if (this != &obj) 
-	{
-    	this->_name = obj.getName();
-		for (int i = 0; i < 4; i++)
-		{
-        	AMateria const *temp = obj._inventory[i];
-        	if (temp)
-        	    this->_inventory[i] = temp->clone();
-        	else
-        	    this->_inventory[i] = NULL;
-        }
-    }
+	*this = obj;
 }
 
 Character &Character::operator=( Character const &obj ) 
 {
-    if (this != &obj)
+	_name = obj.getName();
+	for (int i = 0; i < 4; i++)
 	{
-        this->_name = obj.getName();
-        this->~Character();
-        for (int i = 0; i < 4; i++)
-		{
-            AMateria const *temp = obj._inventory[i];
-            if (temp)
-                this->_inventory[i] = temp->clone();
-            else
-                this->_inventory[i] = NULL;
-        }
-    }
-    return *this;
+		AMateria const *temp = obj._inventory[i];
+		if (temp)
+			_inventory[i] = temp->clone();
+		else
+			_inventory[i] = NULL;
+	}
+	return *this;
 }
 
 Character::~Character()
@@ -74,49 +55,54 @@ Character::~Character()
 	//std::cout << "__Character Default destructor__" << std::endl;
 	for (size_t i = 0; i <= 3; i++)
 	{
-		if (this->_inventory[i] != NULL)
-			delete this->_inventory[i];
+		if (_inventory[i] != NULL)
+			delete _inventory[i];
 	}
 }
 
 std::string const &Character::getName() const
 {
-	return this->_name;
+	return _name;
 }
 
 std::string const &Character::getType() const
 {
-	return this->_inventory[this->_idx]->getType();
+	return _inventory[_idx]->getType();
 }
 
 void Character::equip( AMateria * m )
 {
-	if (this->_idx > 3)
+	if (_idx > 3)
 		return ;
 	for (size_t i = 0; i <= 3; i++)
 	{
-		if (this->_inventory[this->_idx] == NULL)
+		if (_inventory[_idx] == NULL)
 		{
-			this->_inventory[this->_idx] = m;
-			this->_idx++;
+			_inventory[_idx] = m;
+			_idx++;
 			return ;
 		}
 	}
 }
 
+/*
+Handle the Materias your character left on the floor as you like.
+Save the addresses before calling unequip(), or anything else, but
+don’t forget that you have to avoid memory leaks.
+*/
 void Character::unequip( int idx )
 {
-	if (idx < 0 || idx > 3 || this->_inventory[idx] == NULL)
+	if (idx < 0 || idx > 3 || _inventory[idx] == NULL)
 		return ;
-	this->_inventory[idx] = NULL;
-	this->_idx--;
+	_inventory[idx] = NULL;
+	_idx--;
 }
 
 void Character::use( int idx, ICharacter & target )
 {
-	if (idx < 0 || idx > 3 || this->_inventory[idx] == NULL)
+	if (idx < 0 || idx > 3 || _inventory[idx] == NULL)
 		return ;
-	this->_inventory[idx]->use( target );
+	_inventory[idx]->use( target );
 	unequip(idx);
 }
 
@@ -124,8 +110,8 @@ void Character::debugInventory() const
 {
 	for (size_t i = 0; i <= 3; i++)
 	{
-		if (this->_inventory[i] != NULL)
-			std::cout << "slot [" << i << "]> " << this->_inventory[i]->getType() << std::endl;
+		if (_inventory[i] != NULL)
+			std::cout << "slot [" << i << "]> " << _inventory[i]->getType() << std::endl;
 		else
 			std::cout << "slot [" << i << "]> is empty" << std::endl;
 	}

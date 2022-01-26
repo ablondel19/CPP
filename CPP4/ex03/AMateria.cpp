@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 13:53:12 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/19 15:58:01 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/26 23:32:05 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ AMateria::AMateria()
 
 AMateria::AMateria( std::string const &type )
 {
-	this->_type = type;
+	_type = type;
 	//std::cout << "__AMateria parametric constructor__" << std::endl;
 }
 
