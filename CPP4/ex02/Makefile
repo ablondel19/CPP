@@ -6,11 +6,11 @@
 #    By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/16 17:05:08 by ablondel          #+#    #+#              #
-#    Updated: 2022/01/23 17:21:24 by ablondel         ###   ########.fr        #
+#    Updated: 2022/01/26 22:11:07 by ablondel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CFLAGS =	-Wall -Wextra -Werror
+CFLAGS =	-Wall -Wextra -Werror -std=c++98
 CXX =		clang++ $(CFLAGS)
 
 SRC = 	main.cpp \
@@ -21,7 +21,7 @@ SRC = 	main.cpp \
 
 OBJ =	$(SRC:.cpp=.o)
  
-NAME = Brain
+NAME = Abstract
 
 $(NAME):	$(OBJ)
 			$(CXX) $(OBJ) -o $(NAME)

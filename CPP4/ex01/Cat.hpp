@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 09:40:46 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/26 19:30:15 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/26 21:28:12 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ class Cat: virtual public Animal
 {
 	private:
 		std::string	_type;
-		Brain		*_Brain;
+		Brain		*_brain;
 	protected:
 
 	public:
@@ -27,8 +27,9 @@ class Cat: virtual public Animal
 		void deepCopy( const Cat &obj );
 		Cat	&operator=( const Cat &obj );
 		~Cat();
-		virtual std::string	getType( void ) const;
-		virtual void		makeSound( void ) const;
+		virtual std::string		getType( void ) const;
+		virtual Brain			*getBrain( void ) const;
+		virtual void			makeSound( void ) const;
 };
 
 #endif

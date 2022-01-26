@@ -6,43 +6,49 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 09:43:33 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/19 15:46:23 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/26 21:57:34 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Cat.hpp"
 
-Cat::Cat() : _Brain(new Brain())
+Cat::Cat()
 {
-	this->_type = "Cat";
+	_type = "Cat";
+	_brain = new Brain();
 	std::cout << "Cat default constructor" << std::endl;
 }
 
 Cat::Cat( const Cat &obj )
 {
-	if (this != &obj) 
-	{
-    	this->_type = obj.getType();
-		this->_Brain = obj._Brain;
-    }
+	_type = obj.getType();
+	_brain = new Brain(*(obj.getBrain()));
 }
 
 Cat &Cat::operator=( Cat const &obj ) 
 {
-    if (this != &obj)
-	{
-        this->_type = obj.getType();
-		this->_Brain = obj._Brain;
-        this->~Cat();
-    }
+	if (_brain)
+		delete _brain;
+	_brain = new Brain();
+	_type = obj.getType();
     return *this;
 }
 
 Cat::~Cat()
 {
-	delete this->_Brain;
+	delete _brain;
 	std::cout << "Cat default destructor" << std::endl;
+}
+
+std::string Cat::getType() const
+{
+	return _type;
+}
+
+Brain *Cat::getBrain( void ) const
+{
+	return _brain;
 }
 
 void	Cat::makeSound( void ) const

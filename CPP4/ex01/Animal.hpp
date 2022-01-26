@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 17:06:23 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/26 19:35:24 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/26 20:33:20 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Animal
 		Animal	&operator=( const Animal &obj );
 		virtual ~Animal();
 		virtual std::string		getType( void ) const;
-		virtual void			makeSound( void ) const = 0;
+		virtual void			makeSound( void ) const;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 13:54:30 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/17 17:36:57 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/26 21:46:16 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define BRAIN_HPP
 #include <iostream>
 #include <string>
-//#include "Animal.hpp"
+#include "Animal.hpp"
 /*Deep copying
 
 One answer to this problem is to do a deep copy on any non-null pointers being copied. 
@@ -23,12 +23,11 @@ copy lives in distinct memory from the source. This way, the copy and source are
 and will not affect each other in any way. Doing deep copies requires that we write our 
 own copy constructors and overloaded assignment operators.*/
 
-class	Brain//: public Animal
+class	Brain
 {
 	private:
-		std::string ideas[100];
+		std::string *_ideas;
 	protected:
-		Brain		*_Brain;
 	
 	public:
 		Brain();
