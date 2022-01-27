@@ -6,11 +6,11 @@
 #    By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/19 16:38:12 by ablondel          #+#    #+#              #
-#    Updated: 2022/01/23 17:20:42 by ablondel         ###   ########.fr        #
+#    Updated: 2022/01/27 17:49:24 by ablondel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CFLAGS =	-Wall -Wextra -Werror
+CFLAGS =	-Wall -Wextra -Werror -std=c++98
 CXX =		clang++ $(CFLAGS)
 
 SRC = 	main.cpp \

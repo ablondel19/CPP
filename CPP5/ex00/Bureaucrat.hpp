@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 16:38:49 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/20 12:50:00 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/27 18:06:49 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,14 @@ class	Bureaucrat
 		void		promotion( void );
 		void		demotion( void );
 		
-		class GradeTooHighException: virtual public std::exception
+	class GradeTooHighException: virtual public std::exception
 	{
 		private:
 		public:
 			const char *_msg;
-			GradeTooHighException() : _msg("BUREAUCRAT GRADE IS TOO HIGH!") {}
+			GradeTooHighException( const char *errortype ) : _msg("BUREAUCRAT GRADE IS TOO HIGH!") {
+				std::cout << " --- " << errortype << " --- " << std::endl;
+			}
 			virtual ~GradeTooHighException() throw() {};
 			const char *what() const throw() { return _msg; }
 	};
@@ -48,7 +50,9 @@ class	Bureaucrat
 		private:
 		public:
 			const char *_msg;
-			GradeTooLowException() : _msg("BUREAUCRAT GRADE IS TOO LOW!") {}
+			GradeTooLowException( const char *errortype ) : _msg("BUREAUCRAT GRADE IS TOO LOW!") {
+				std::cout << " --- " << errortype << " --- " << std::endl;
+			}
 			virtual ~GradeTooLowException() throw() {}
 			const char *what() const throw() { return _msg; }
 	};

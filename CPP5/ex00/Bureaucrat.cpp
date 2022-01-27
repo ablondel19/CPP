@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 16:46:23 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/20 12:49:00 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/27 18:11:45 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ Bureaucrat::Bureaucrat( const std::string &name, int grade ) : _name(name), _gra
 	try
 	{
 		if (grade < 1)
-			throw (Bureaucrat::GradeTooHighException());
+			throw (Bureaucrat::GradeTooHighException("CREATION ERROR"));
 		if (grade > 150)
-			throw (Bureaucrat::GradeTooLowException());
+			throw (Bureaucrat::GradeTooLowException("CREATION ERROR"));
 	}
 	catch(const Bureaucrat::GradeTooHighException &e )
 	{
@@ -40,15 +40,15 @@ Bureaucrat::Bureaucrat( const std::string &name, int grade ) : _name(name), _gra
 Bureaucrat::Bureaucrat( const Bureaucrat &obj )
 {
 	//std::cout << "__Bureaucrat Copy constructor__" << std::endl;
-	(std::string)this->_name = (std::string)obj._name;
-	this->_grade = obj._grade;
+	(std::string)this->_name = (std::string)obj.getName();
+	this->_grade = obj.getGrade();
 }
 
 Bureaucrat	&Bureaucrat::operator=( const Bureaucrat &obj )
 {
 	//std::cout << "__Bureaucrat Assignation operator__" << std::endl;
 	(std::string)this->_name = obj.getName();
-	this->_grade = obj._grade;
+	this->_grade = obj.getGrade();
 	return (*this);
 }
 
@@ -75,12 +75,28 @@ int			Bureaucrat::getGrade( void ) const
 
 void		Bureaucrat::promotion( void )
 {
-	if (this->_grade >= 1)
-		this->_grade--;
+	try
+	{
+		if (this->_grade <= 1)
+			throw (Bureaucrat::GradeTooHighException("PROMOTION ERROR"));
+		_grade--;
+	}
+	catch(const Bureaucrat::GradeTooHighException& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 }
 
 void		Bureaucrat::demotion( void )
 {
-	if (this->_grade <= 150)
-		this->_grade++;
+	try
+	{
+		if (this->_grade >= 150)
+			throw (Bureaucrat::GradeTooLowException("DEMOTION ERROR"));
+		_grade++;
+	}
+	catch(const Bureaucrat::GradeTooLowException& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 }
