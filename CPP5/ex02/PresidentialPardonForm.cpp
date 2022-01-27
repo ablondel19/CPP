@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 18:38:02 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/20 23:15:08 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/27 21:43:58 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ PresidentialPardonForm::PresidentialPardonForm( const PresidentialPardonForm &ob
 
 PresidentialPardonForm	&PresidentialPardonForm::operator=( const PresidentialPardonForm &obj )
 {
-	this->_name = obj.getFormName();
-	const_cast<int&>(this->_minimumGradeToSign) = obj.getMinGradeToSign();
-	const_cast<int&>(this->_minimumGradeToExec) = obj.getMinGradeToExec();
+	_name = obj.getFormName();
+	const_cast<int&>(_minimumGradeToSign) = obj.getMinGradeToSign();
+	const_cast<int&>(_minimumGradeToExec) = obj.getMinGradeToExec();
 	return *this;
 
 }
@@ -43,22 +43,22 @@ PresidentialPardonForm::~PresidentialPardonForm()
 
 std::string	PresidentialPardonForm::getFormName( void ) const
 {
-	return this->_name;
+	return _name;
 }
 
 int 		PresidentialPardonForm::getFormState() const
 {
-	return this->_isSigned;
+	return _isSigned;
 }
 
 int			PresidentialPardonForm::getMinGradeToSign( void ) const
 {
-	return this->_minimumGradeToSign;
+	return _minimumGradeToSign;
 }
 
 int			PresidentialPardonForm::getMinGradeToExec( void ) const
 {
-	return this->_minimumGradeToExec;
+	return _minimumGradeToExec;
 }
 
 std::ostream	&operator<<( std::ostream &o, PresidentialPardonForm const &obj )
@@ -76,7 +76,7 @@ void 		PresidentialPardonForm::execute( const Bureaucrat &executor ) const
 {
 	try
 	{
-		if (executor.getGrade() > this->_minimumGradeToExec)
+		if (executor.getGrade() > _minimumGradeToExec)
 			throw ( Form::GradeTooHighException("PRESIDENTIAL: BUREAUCRAT LEVEL TOO LOW TO EXECUTE!") );
 	}
 	catch ( const Form::GradeTooHighException &e )

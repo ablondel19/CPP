@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 16:38:49 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/20 21:02:31 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/27 21:34:20 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,18 +42,22 @@ class	Bureaucrat
 		private:
 			const char *_msg;
 		public:
-			GradeTooHighException( const char *msg ) : _msg(msg) {}
+			GradeTooHighException( const char *errortype ) : _msg("GRADE IS TOO HIGH!") {
+				std::cout << " --- " << errortype << " --- " << std::endl;
+			}
 			virtual ~GradeTooHighException() throw() {};
-			const char *what() const throw() { return this->_msg; }
+			const char *what() const throw() { return _msg; }
 	};
 	class GradeTooLowException: virtual public std::exception
 	{
 		private:
 			const char *_msg;
 		public:
-			GradeTooLowException( const char *msg ) : _msg(msg) {}
+			GradeTooLowException( const char *errortype ) : _msg("GRADE IS TOO LOW!") {
+				std::cout << " --- " << errortype << " --- " << std::endl;
+			}
 			virtual ~GradeTooLowException() throw() {}
-			const char *what() const throw() { return this->_msg; }
+			const char *what() const throw() { return _msg; }
 	};
 };
 

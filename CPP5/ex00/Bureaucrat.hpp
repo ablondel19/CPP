@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 16:38:49 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/27 18:06:49 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/27 22:59:59 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,7 @@ class	Bureaucrat
 	private:
 		const std::string	_name;
 		int					_grade;
-	protected:
-		/* data */
+
 	public:
 		Bureaucrat();
 		Bureaucrat( const std::string &name, int grade );
@@ -36,25 +35,19 @@ class	Bureaucrat
 		
 	class GradeTooHighException: virtual public std::exception
 	{
-		private:
 		public:
 			const char *_msg;
-			GradeTooHighException( const char *errortype ) : _msg("BUREAUCRAT GRADE IS TOO HIGH!") {
-				std::cout << " --- " << errortype << " --- " << std::endl;
-			}
-			virtual ~GradeTooHighException() throw() {};
-			const char *what() const throw() { return _msg; }
+			GradeTooHighException( const char *errortype );
+			virtual ~GradeTooHighException() throw();
+			const char *what() const throw();
 	};
 	class GradeTooLowException: virtual public std::exception
 	{
-		private:
 		public:
 			const char *_msg;
-			GradeTooLowException( const char *errortype ) : _msg("BUREAUCRAT GRADE IS TOO LOW!") {
-				std::cout << " --- " << errortype << " --- " << std::endl;
-			}
-			virtual ~GradeTooLowException() throw() {}
-			const char *what() const throw() { return _msg; }
+			GradeTooLowException( const char *errortype );
+			virtual ~GradeTooLowException() throw();
+			const char *what() const throw();
 	};
 };
 

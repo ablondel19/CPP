@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 19:33:50 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/27 18:36:46 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/27 21:21:30 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ Form::Form( std::string name, int minGradeToSign, int minGradeToExec ) : _formNa
 	try
 	{
 		if (minGradeToSign < 1)
-			throw ( Form::GradeTooHighException(" ---FORM CREATION---\nMAXIMUM GRADE TO SIGN IS 1.") );
+			throw ( Form::GradeTooHighException("MAXIMUM GRADE TO SIGN IS 1.") );
 		if (minGradeToSign > 150)
-			throw ( Form::GradeTooLowException(" ---FORM CREATION---\nMINIMUM GRADE TO SIGN IS 150.") );
+			throw ( Form::GradeTooLowException("MINIMUM GRADE TO SIGN IS 150.") );
 	}
 	catch ( const Form::GradeTooHighException &e )
 	{
@@ -39,11 +39,11 @@ Form::Form( std::string name, int minGradeToSign, int minGradeToExec ) : _formNa
 	{
 		if (minGradeToExec < 1)
 		{
-			throw ( Form::GradeTooHighException(" ---FORM CREATION---\nMAXIMUM GRADE TO EXECUTE IS 1.") );
+			throw ( Form::GradeTooHighException("MAXIMUM GRADE TO EXECUTE IS 1.") );
 		}
 		if (minGradeToExec > 150)
 		{
-			throw ( Form::GradeTooLowException(" ---FORM CREATION---\nMINIMUM GRADE TO EXEC IS 150.") );
+			throw ( Form::GradeTooLowException("MINIMUM GRADE TO EXEC IS 150.") );
 		}
 	}
 	catch ( const Form::GradeTooHighException &e )
@@ -112,7 +112,7 @@ void	Form::beSigned( Bureaucrat obj )
 	try
 	{
 		if (obj.getGrade() > this->_minGradeToSign)
-			throw ( Form::GradeTooHighException(" --- BESIGNED ---\nBUREAUCRAT LEVEL TOO LOW TO SIGN!") );
+			throw ( Form::GradeTooHighException("BUREAUCRAT LEVEL TOO LOW TO SIGN!") );
 	}
 	catch ( const Form::GradeTooHighException &e )
 	{
