@@ -6,19 +6,22 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 16:26:31 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/26 23:50:53 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/27 13:44:14 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
-Character::Character() : _idx(0)
+Character::Character()
 {
 	//std::cout << "__Character Default constructor__" << std::endl;
 	_name = "";
 	_idx = 0;
+	_discardedIdx = 0;
 	for (size_t i = 0; i <= 3; i++)
 		_inventory[i] = NULL;
+	for (size_t i = 0; i < 100; i++)
+		_discarded[i] = NULL;
 }
 
 Character::Character( std::string name )
@@ -26,8 +29,11 @@ Character::Character( std::string name )
 	//std::cout << "__Character parametric constructor__" << std::endl;
 	_name = name;
 	_idx = 0;
+	_discardedIdx = 0;
 	for (size_t i = 0; i <= 3; i++)
 		_inventory[i] = NULL;
+	for (size_t i = 0; i < 100; i++)
+		_discarded[i] = NULL;
 }
 
 Character::Character( const Character &obj )
@@ -47,7 +53,16 @@ Character &Character::operator=( Character const &obj )
 		else
 			_inventory[i] = NULL;
 	}
+	for (size_t i = 0; i < 100; i++)
+	{
+		_discarded[i] = obj._discarded[i];
+	}
 	return *this;
+}
+
+AMateria *Character::getMateria( int idx ) const
+{
+	return _inventory[idx];
 }
 
 Character::~Character()
@@ -57,6 +72,11 @@ Character::~Character()
 	{
 		if (_inventory[i] != NULL)
 			delete _inventory[i];
+	}
+	for (size_t i = 0; i < 100; i++)
+	{
+		if (_discarded[i] != NULL)
+			delete _discarded[i];
 	}
 }
 
@@ -72,7 +92,7 @@ std::string const &Character::getType() const
 
 void Character::equip( AMateria * m )
 {
-	if (_idx > 3)
+	if (_idx > 3 || !m)
 		return ;
 	for (size_t i = 0; i <= 3; i++)
 	{
@@ -85,16 +105,13 @@ void Character::equip( AMateria * m )
 	}
 }
 
-/*
-Handle the Materias your character left on the floor as you like.
-Save the addresses before calling unequip(), or anything else, but
-don’t forget that you have to avoid memory leaks.
-*/
 void Character::unequip( int idx )
 {
 	if (idx < 0 || idx > 3 || _inventory[idx] == NULL)
 		return ;
+	_discarded[_discardedIdx] = _inventory[idx];
 	_inventory[idx] = NULL;
+	_discardedIdx++;
 	_idx--;
 }
 
@@ -103,7 +120,6 @@ void Character::use( int idx, ICharacter & target )
 	if (idx < 0 || idx > 3 || _inventory[idx] == NULL)
 		return ;
 	_inventory[idx]->use( target );
-	unequip(idx);
 }
 
 void Character::debugInventory() const
@@ -114,5 +130,14 @@ void Character::debugInventory() const
 			std::cout << "slot [" << i << "]> " << _inventory[i]->getType() << std::endl;
 		else
 			std::cout << "slot [" << i << "]> is empty" << std::endl;
+	}
+	for (int i = 0; i < _discardedIdx; i++)
+	{
+		if (_discarded[i] != NULL)
+		{
+			std::cout << "junk [" << i << "]> " << _discarded[i]->getType() << std::endl;
+		}
+		else
+			std::cout << "junk [" << i << "]> is empty" << std::endl;
 	}
 }

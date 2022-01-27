@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 13:43:04 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/18 19:38:31 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/27 13:41:11 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class	Cure: virtual public AMateria
 		Cure();
 		Cure( const Cure &obj );
 		Cure &operator=( const Cure &obj );
-		~Cure();
+		virtual ~Cure();
 		virtual std::string const & getType() const;
 		virtual AMateria* clone() const;
 		virtual void use( ICharacter& target );

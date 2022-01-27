@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 13:39:52 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/19 11:44:32 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/27 13:41:09 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class	Ice: virtual public AMateria
 		Ice();
 		Ice( const Ice &obj );
 		Ice &operator=( const Ice &obj );
-		~Ice();
+		virtual ~Ice();
 		std::string const & getType() const;
 		virtual AMateria* clone() const;
 		virtual void use( ICharacter& target );

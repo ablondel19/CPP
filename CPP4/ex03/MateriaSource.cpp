@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 12:00:23 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/19 15:55:08 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/27 13:42:56 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,12 +86,12 @@ AMateria* MateriaSource::createMateria( std::string const & type )
 
 	for (size_t i = 0; i <= 3; i++)
 	{
-		if (type.compare(this->_materias[i]) == 0 && this->_materias[i].compare("ice") == 0)
+		if (type == _materias[i] && type == "ice")
 		{
 			neo = new Ice();
 			return neo;
 		}
-		else if (type.compare(this->_materias[i]) == 0 && this->_materias[i].compare("cure") == 0)
+		else if (type == _materias[i] && type == "cure")
 		{
 			neo = new Cure();
 			return neo;

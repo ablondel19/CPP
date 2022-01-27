@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 14:03:11 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/19 15:50:39 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/27 13:16:22 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,4 @@ AMateria *Cure::clone() const
 void Cure::use(ICharacter &target)
 {
 	std::cout << "* heals " << target.getName() << "’s wounds *" << std::endl;
-	delete this;
 }
