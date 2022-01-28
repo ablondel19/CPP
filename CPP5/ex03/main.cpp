@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 16:38:20 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/28 16:47:03 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/28 19:20:12 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,8 @@ int		main(void)
 	Bureaucrat c("charlie", 1);
 	std::cout << c << std::endl;
 	std::cout << *rrf << std::endl;
-	rrf->beSigned(c);
 	c.signForm(*rrf);
 	std::cout << *rrf << std::endl;
 	c.executeForm(*rrf);
-	rrf->execute(c);
 	return 0;
 }

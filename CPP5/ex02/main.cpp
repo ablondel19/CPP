@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 16:38:20 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/28 16:16:49 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/28 19:19:59 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,9 @@ int		main(void)
 	std::cout << "__________________________________________" << std::endl;
 	RobotomyRequestForm f3("TARGET");
 	std::cout << f3 << std::endl;
-	f3.beSigned(c);
 	c.signForm(f3);
 	std::cout << f3 << std::endl;
 	c.executeForm(f3);
-	f3.execute(c);
 
 
 

@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 16:46:23 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/28 14:12:26 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/28 19:23:42 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ Bureaucrat::Bureaucrat( const std::string &name, int grade ) : _name(name), _gra
 Bureaucrat::Bureaucrat( const Bureaucrat &obj )
 {
 	//std::cout << "__Bureaucrat Copy constructor__" << std::endl;
-	( std::string )_name = (std::string)obj.getName();
+	( std::string )_name = obj.getName();
 	_grade = obj.getGrade();
 }
 

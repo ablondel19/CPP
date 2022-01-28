@@ -6,13 +6,13 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 18:03:21 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/28 16:29:51 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/28 19:22:37 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm() : _name("_shrubbery"), _minimumGradeToSign(45), _minimumGradeToExec(137), _isSigned(0)
+ShrubberyCreationForm::ShrubberyCreationForm() : _name("_shrubbery"), _minimumGradeToSign(145), _minimumGradeToExec(137), _isSigned(0)
 {
 	//std::cout << "__Default ShrubberyCreationForm constructor__" << std::endl;
 }

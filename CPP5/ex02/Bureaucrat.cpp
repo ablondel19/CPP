@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 16:46:23 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/28 16:16:20 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/28 19:21:34 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,7 @@ void		Bureaucrat::signForm( Form &f )
 	{
 		if (f.getMinGradeToSign() < _grade)
 			throw ( Form::GradeTooLowException("SIGNATURE ERROR") );
+		f.beSigned(*this);
 		std::cout << _name << " signs " << f.getName() << std::endl;
 	}
 	catch ( const Form::GradeTooLowException &e )
@@ -123,6 +124,7 @@ void		Bureaucrat::executeForm( const Form &form )
 		if (form.getMinGradeToExec() < _grade)
 			throw ( Form::GradeTooLowException("EXECUTION ERROR") );
 		std::cout << _name << " executes " << form.getName() << std::endl;
+		form.execute(*this);
 	}
 	catch ( const Form::GradeTooLowException &e )
 	{
