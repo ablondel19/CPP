@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 18:38:08 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/20 22:10:34 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/28 16:10:12 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ class	PresidentialPardonForm: virtual public Form
 		/* data */
 	public:
 		PresidentialPardonForm();
-		PresidentialPardonForm(std::string target);
+		PresidentialPardonForm( std::string target );
 		PresidentialPardonForm( const PresidentialPardonForm &obj );
 		PresidentialPardonForm &operator=( const PresidentialPardonForm &obj );
 		~PresidentialPardonForm();
-		virtual std::string	getFormName( void ) const;
+		virtual std::string	getName( void ) const;
 		virtual int			getFormState( void ) const;
 		virtual int			getMinGradeToSign( void ) const;
 		virtual int			getMinGradeToExec( void ) const;

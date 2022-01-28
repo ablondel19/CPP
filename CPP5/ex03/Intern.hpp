@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 19:56:37 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/21 21:10:34 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/28 16:42:18 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 
-class	Intern: public virtual Form
+class	Intern
 {
 	private:
 		/* data */

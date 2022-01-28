@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 18:34:11 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/20 22:54:18 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/28 16:17:29 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class	RobotomyRequestForm: virtual public Form
 		RobotomyRequestForm( const RobotomyRequestForm &obj );
 		RobotomyRequestForm &operator=( const RobotomyRequestForm &obj );
 		~RobotomyRequestForm();
-		virtual std::string	getFormName( void ) const;
+		virtual std::string	getName( void ) const;
 		virtual int			getFormState( void ) const;
 		virtual int			getMinGradeToSign( void ) const;
 		virtual int			getMinGradeToExec( void ) const;

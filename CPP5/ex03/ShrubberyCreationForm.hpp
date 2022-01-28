@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 18:04:01 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/22 13:28:53 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/28 16:20:22 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class	ShrubberyCreationForm: virtual public Form
 		ShrubberyCreationForm( const ShrubberyCreationForm &obj );
 		ShrubberyCreationForm &operator=( const ShrubberyCreationForm &obj );
 		~ShrubberyCreationForm();
-		virtual std::string	getFormName( void ) const;
+		virtual std::string	getName( void ) const;
 		virtual int			getFormState( void ) const;
 		virtual int			getMinGradeToSign( void ) const;
 		virtual int			getMinGradeToExec( void ) const;
