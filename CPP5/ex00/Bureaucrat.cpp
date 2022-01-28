@@ -6,20 +6,20 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 16:46:23 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/27 23:06:28 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/28 12:53:07 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat()
+Bureaucrat::Bureaucrat() : _name("Some bureaucrat"), _grade(0)
 {
-	std::cout << "__Bureaucrat Default constructor__" << std::endl;
+	//std::cout << "__Bureaucrat Default constructor__" << std::endl;
 }
 
 Bureaucrat::Bureaucrat( const std::string &name, int grade ) : _name(name), _grade(grade)
 {
-	std::cout << "__Bureaucrat param constructor__" << std::endl;
+	//std::cout << "__Bureaucrat param constructor__" << std::endl;
 	try
 	{
 		if (grade < 1)
@@ -39,14 +39,14 @@ Bureaucrat::Bureaucrat( const std::string &name, int grade ) : _name(name), _gra
 
 Bureaucrat::Bureaucrat( const Bureaucrat &obj )
 {
-	std::cout << "__Bureaucrat Copy constructor__" << std::endl;
+	//std::cout << "__Bureaucrat Copy constructor__" << std::endl;
 	( std::string )_name = (std::string)obj.getName();
 	_grade = obj.getGrade();
 }
 
 Bureaucrat	&Bureaucrat::operator=( const Bureaucrat &obj )
 {
-	std::cout << "__Bureaucrat Assignation operator__" << std::endl;
+	//std::cout << "__Bureaucrat Assignation operator__" << std::endl;
 	( std::string )_name = obj.getName();
 	_grade = obj.getGrade();
 	return (*this);
@@ -60,7 +60,7 @@ std::ostream	&operator<<( std::ostream &o , Bureaucrat const &obj)
 
 Bureaucrat::~Bureaucrat()
 {
-	std::cout << "__Bureaucrat Default destructor__" << std::endl;
+	//std::cout << "__Bureaucrat Default destructor__" << std::endl;
 }
 
 std::string Bureaucrat::getName( void ) const
