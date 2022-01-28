@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 16:38:20 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/28 14:33:26 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/28 19:40:55 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,8 @@ int		main(void)
 	std::cout << "operator << overload; " << bob << std::endl;
 	std::cout << "operator << overload; " << joe << std::endl;
 	Form form42("form42", 17, 42);
-	form42.beSigned(joe); // error joe is level 150
-	joe.signForm(form42); // error signature min grade is 17
-	form42.beSigned(bob); // valid bob is level 2
-	bob.signForm(form42); // valid signature min grade is 17
-	std::cout << joe << std::endl;
-	std::cout << bob << std::endl;
+	joe.signForm(form42); // error
+	bob.signForm(form42); // valid
 	std::cout << form42 << std::endl; // form signed
 	return 0;
 }

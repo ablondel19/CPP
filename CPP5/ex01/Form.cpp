@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 19:33:50 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/28 14:44:10 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/28 19:39:09 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ std::ostream	&operator<<( std::ostream &o, Form const &obj )
 	return (o);
 }
 
-void	Form::beSigned( Bureaucrat obj )
+void	Form::beSigned( Bureaucrat &obj )
 {
 	try
 	{

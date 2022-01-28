@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 16:46:23 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/28 14:39:23 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/28 19:40:13 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,12 +101,13 @@ void		Bureaucrat::demotion( void )
 	}
 }
 
-void		Bureaucrat::signForm( Form const &f )
+void		Bureaucrat::signForm( Form &f )
 {
 	try
 	{
 		if (f.getMinGradeToSign() < _grade)
 			throw ( Form::GradeTooLowException("SIGNATURE ERROR") );
+		f.beSigned(*this);
 		std::cout << _name << " signs " << f.getFormName() << std::endl;
 	}
 	catch ( const Form::GradeTooLowException &e )

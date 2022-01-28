@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 19:31:45 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/28 14:47:32 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/28 19:39:55 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ class	Form
 		int			getFormState( void ) const;
 		int			getMinGradeToSign( void ) const;
 		int			getMinGradeToExec( void ) const;
-		void		beSigned( Bureaucrat obj );
+		void		beSigned( Bureaucrat &obj );
 		
 
 	class GradeTooHighException: virtual public std::exception
