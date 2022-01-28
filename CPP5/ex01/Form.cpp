@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 19:33:50 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/28 14:34:16 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/28 14:44:10 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,10 @@ Form::Form( const Form &obj ) : _formName(obj.getFormName()), _isSigned(obj.getF
 Form	&Form::operator=( const Form &obj )
 {
 	//std::cout << "__Form Assignation operator__" << std::endl;
-	(std::string)this->_formName = obj.getFormName();
-	this->_isSigned = obj.getFormState();
-	const_cast<int&>(this->_minGradeToExec) = obj.getMinGradeToSign();
-	const_cast<int&>(this->_minGradeToExec) = obj.getMinGradeToExec();
+	(std::string)_formName = obj.getFormName();
+	_isSigned = obj.getFormState();
+	const_cast<int&>(_minGradeToExec) = obj.getMinGradeToSign();
+	const_cast<int&>(_minGradeToExec) = obj.getMinGradeToExec();
 	return (*this);
 }
 
@@ -78,22 +78,22 @@ Form::~Form()
 
 std::string	Form::getFormName( void ) const
 {
-	return this->_formName;
+	return _formName;
 }
 
 int			Form::getFormState( void ) const
 {
-	return this->_isSigned;
+	return _isSigned;
 }
 
 int			Form::getMinGradeToSign( void ) const
 {
-	return this->_minGradeToSign;
+	return _minGradeToSign;
 }
 
 int			Form::getMinGradeToExec( void ) const
 {
-	return this->_minGradeToExec;
+	return _minGradeToExec;
 }
 
 std::ostream	&operator<<( std::ostream &o, Form const &obj )

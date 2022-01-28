@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 19:31:45 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/27 21:40:22 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/28 16:30:50 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Bureaucrat;
 class	Form
 {
 	private:
-		const std::string 	_formName;
+		const std::string 	_name;
 		bool				_isSigned;
 		const int			_minGradeToSign;
 		const int			_minGradeToExec;
@@ -31,35 +31,42 @@ class	Form
 		Form( const Form &obj );
 		Form &operator=( const Form &obj );
 		virtual ~Form();
-		std::string		getFormName( void ) const;
-		virtual int		getFormState( void ) const;
-		virtual int		getMinGradeToSign( void ) const;
-		virtual int		getMinGradeToExec( void ) const;
-		virtual void	beSigned( Bureaucrat &obj );
-		virtual void	execute( Bureaucrat const &executor ) const = 0;
+		virtual std::string	getName( void ) const;
+		virtual int			getFormState( void ) const;
+		virtual int			getMinGradeToSign( void ) const;
+		virtual int			getMinGradeToExec( void ) const;
+		virtual void		beSigned( Bureaucrat &obj );
+		virtual void		execute( Bureaucrat const &executor ) const = 0;
 		
 
-	class GradeTooHighException: public std::exception
+	class GradeTooHighException: virtual public std::exception
 	{
 		private:
 			const char *_msg;
 		public:
-			GradeTooHighException( const char *errortype ) : _msg("GRADE IS TOO HIGH!") {
-				std::cout << " --- " << errortype << " --- " << std::endl;
-			}
-			~GradeTooHighException() throw() {};
-			const char *what() const throw() { return this->_msg; }
+			GradeTooHighException( const char *errortype );
+			~GradeTooHighException() throw();
+			const char *what() const throw();
 	};
-	class GradeTooLowException: public std::exception
+
+	class GradeTooLowException: virtual public std::exception
 	{
 		private:
 			const char *_msg;
 		public:
-			GradeTooLowException( const char *errortype ) : _msg("GRADE IS TOO LOW!") {
-				std::cout << " --- " << errortype << " --- " << std::endl;
-			}
-			~GradeTooLowException() throw() {}
-			const char *what() const throw() { return this->_msg; }
+			GradeTooLowException( const char *errortype );
+			~GradeTooLowException() throw();
+			const char *what() const throw();
+	};
+
+	class MissingSinature: virtual public std::exception
+	{
+		private:
+			const char *_msg;
+		public:
+			MissingSinature( const char *errortype );
+			~MissingSinature() throw();
+			const char *what() const throw();
 	};
 };
 

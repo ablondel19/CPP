@@ -6,18 +6,18 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 19:33:50 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/27 21:39:21 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/28 16:26:17 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form()  : _formName(""), _isSigned(0), _minGradeToSign(0), _minGradeToExec(0)
+Form::Form()  : _name(""), _isSigned(0), _minGradeToSign(0), _minGradeToExec(0)
 {
 	//std::cout << "__Form Default constructor__" << std::endl;
 }
 
-Form::Form( std::string name, int minGradeToSign, int minGradeToExec ) : _formName(name), _isSigned(0), _minGradeToSign(minGradeToSign), _minGradeToExec(minGradeToExec)
+Form::Form( std::string name, int minGradeToSign, int minGradeToExec ) : _name(name), _isSigned(0), _minGradeToSign(minGradeToSign), _minGradeToExec(minGradeToExec)
 {
 	//std::cout << "__Form param constructor__" << std::endl;
 	try
@@ -56,7 +56,7 @@ Form::Form( std::string name, int minGradeToSign, int minGradeToExec ) : _formNa
 	}
 }
 
-Form::Form( const Form &obj ) : _formName(obj.getFormName()), _isSigned(obj.getFormState()), _minGradeToSign(obj.getMinGradeToSign()), _minGradeToExec(obj.getMinGradeToExec())
+Form::Form( const Form &obj ) : _name(obj.getName()), _isSigned(obj.getFormState()), _minGradeToSign(obj.getMinGradeToSign()), _minGradeToExec(obj.getMinGradeToExec())
 {
 	//std::cout << "__Form Copy constructor__" << std::endl;
 }
@@ -64,7 +64,7 @@ Form::Form( const Form &obj ) : _formName(obj.getFormName()), _isSigned(obj.getF
 Form	&Form::operator=( const Form &obj )
 {
 	//std::cout << "__Form Assignation operator__" << std::endl;
-	(std::string)_formName = obj.getFormName();
+	(std::string)_name = obj.getName();
 	_isSigned = obj.getFormState();
 	const_cast<int&>(_minGradeToSign) = obj.getMinGradeToSign();
 	const_cast<int&>(_minGradeToExec) = obj.getMinGradeToExec();
@@ -76,9 +76,9 @@ Form::~Form()
 	//std::cout << "__Form Default destructor__" << std::endl;
 }
 
-std::string	Form::getFormName( void ) const
+std::string	Form::getName( void ) const
 {
-	return _formName;
+	return _name;
 }
 
 int			Form::getFormState( void ) const
@@ -99,7 +99,7 @@ int			Form::getMinGradeToExec( void ) const
 std::ostream	&operator<<( std::ostream &o, Form const &obj )
 {
 	o << "-------------------------------------------\n";
-	o << "| NAME:          	" << obj.getFormName() << "\n";
+	o << "| NAME:          	" << obj.getName() << "\n";
 	o << "| SIGNATURE:     	" << obj.getFormState() << "/1\n";
 	o << "| GRADE TO SIGN: 	" << obj.getMinGradeToSign() << "\n";
 	o << "| GRADE TO EXEC: 	" << obj.getMinGradeToExec() << "\n";
@@ -120,3 +120,45 @@ void	Form::beSigned( Bureaucrat &obj )
 		std::cerr << e.what() << std::endl;
 	}
 }
+
+void Form::execute( const Bureaucrat &executor ) const
+{
+	(void)executor;
+}
+
+Form::GradeTooHighException::GradeTooHighException(const char *errortype)
+{
+	_msg = "FORM GRADE IS TOO LOW";
+	std::cout << " --- " << errortype << " --- " << std::endl;
+}
+
+const char *Form::GradeTooHighException::what() const throw()
+{
+	return _msg;
+}
+
+Form::GradeTooLowException::GradeTooLowException(const char *errortype)
+{
+	_msg = "FORM GRADE IS TOO HIGH";
+	std::cout << " --- " << errortype << " --- " << std::endl;
+}
+
+const char *Form::GradeTooLowException::what() const throw()
+{
+	return _msg;
+}
+
+Form::MissingSinature::MissingSinature(const char *errortype)
+{
+	_msg = "FORM IS NOT SIGNED";
+	std::cout << " --- " << errortype << " --- " << std::endl;
+}
+
+const char *Form::MissingSinature::what() const throw()
+{
+	return _msg;
+}
+
+Form::MissingSinature::~MissingSinature() throw() {}
+Form::GradeTooHighException::~GradeTooHighException() throw() {}
+Form::GradeTooLowException::~GradeTooLowException() throw() {}

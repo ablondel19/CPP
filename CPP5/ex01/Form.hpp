@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 19:31:45 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/28 14:14:13 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/28 14:47:32 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ class	Form
 			~GradeTooHighException() throw();
 			const char *what() const throw();
 	};
+
 	class GradeTooLowException: virtual public std::exception
 	{
 		private:

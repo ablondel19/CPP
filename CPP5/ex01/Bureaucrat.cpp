@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 16:46:23 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/28 14:29:24 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/28 14:39:23 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ void		Bureaucrat::signForm( Form const &f )
 	}
 	catch ( const Form::GradeTooLowException &e )
 	{
-		std::cerr << _name << " cannot sign because >";
+		std::cerr << _name << " cannot sign because: ";
 		std::cerr << e.what() << std::endl;
 		return ;
 	}
