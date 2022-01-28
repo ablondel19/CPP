@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 14:36:36 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/24 23:14:54 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/28 21:16:21 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@ int		main( void )
 {
 	//////////////////TEST INT//////////////////////
 	int		t[5] = {0, 1, 2, 3, 4};
-	iter(t, 5, display);
-	std::cout << "|" << std::endl;
+	iter(t, 5, print);
+	std::cout << std::endl;
 	////////////////TEST FLOAT//////////////////////
 	float		f[5] = {0.0, 1.1, 2.2, 3.3, 4.4};
-	iter(f, 5, display);
-	std::cout << "|" << std::endl;
+	iter(f, 5, print);
+	std::cout << std::endl;
 	//////////////////TEST CHAR/////////////////////
 	char s[6] = "01234";
-	iter(s, 5, display);
-	std::cout << "|" << std::endl;
+	iter(s, 5, print);
+	std::cout << std::endl;
 }

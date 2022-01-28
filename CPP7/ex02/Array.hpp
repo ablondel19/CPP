@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 16:08:32 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/25 15:06:43 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/28 21:26:42 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,9 @@ class	Array
 		Array( unsigned int n )
 		{
 			_t = new T[n];
-			this->_size = n;
+			_size = n;
 			for (size_t i = 0; i < n; i++)
-			{
 				_t[i] = 0;
-			}
 		}
 		Array( const Array &obj )
 		{
@@ -51,20 +49,14 @@ class	Array
 			_t = tmp;
 			return _t;
 		}
-		T &operator[](T index)
+		T &operator[](int index)
 		{
-			try
-			{
-				if (index >= 0 || index <= static_cast<int>(_size))
-					;
-			}
-			catch(const std::exception& e)
-			{
-				std::cerr << e.what() << '\n';
-			}
-			return _t[index];
+			if (index < 0 || index > static_cast<int>(_size))
+				throw ( std::exception() );
+			else
+				return _t[index];
 		}
-		~Array() {}
+		~Array() {};
 };
 
 

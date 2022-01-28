@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 16:11:11 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/25 16:46:05 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/28 21:27:29 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ int main(int, char**)
     }
     catch(const std::exception& oor)
     {
+        std::cerr << "this is an error from that statement" << std::endl;
         std::cerr << oor.what() << '\n';
     }
     try
