@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/23 18:17:09 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/23 18:27:05 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/28 19:47:54 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ Data::~Data()
 
 std::__1::string Data::getData() const
 {
-	return (this->_data);
+	return (_data);
 }
 
 uintptr_t	serialize( Data *ptr )

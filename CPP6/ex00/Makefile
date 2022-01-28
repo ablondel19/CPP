@@ -6,7 +6,7 @@
 #    By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/23 13:52:24 by ablondel          #+#    #+#              #
-#    Updated: 2022/01/23 16:35:04 by ablondel         ###   ########.fr        #
+#    Updated: 2022/01/28 19:53:19 by ablondel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRC = 	main.cpp \
 
 OBJ =	$(SRC:.cpp=.o)
  
-NAME = TypeCast
+NAME = convert
 
 $(NAME):	$(OBJ)
 			$(CXX) $(OBJ) -o $(NAME)
