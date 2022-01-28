@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 16:38:20 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/28 12:56:52 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/28 13:06:04 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int		main(void)
 	bob.promotion(); // gain 1 level = increment error
 	joe.promotion(); // valid
 	bob.demotion(); // valid
+	wes.promotion(); // no effect
 	std::cout << "operator << overload; " << bob << std::endl;
 	std::cout << "operator << overload; " << joe << std::endl;
 	return 0;

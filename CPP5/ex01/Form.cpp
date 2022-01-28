@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 19:33:50 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/27 21:21:30 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/28 14:34:16 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ Form::Form( std::string name, int minGradeToSign, int minGradeToExec ) : _formNa
 	try
 	{
 		if (minGradeToSign < 1)
-			throw ( Form::GradeTooHighException("MAXIMUM GRADE TO SIGN IS 1.") );
+			throw ( Form::GradeTooHighException("CREATION ERROR") );
 		if (minGradeToSign > 150)
-			throw ( Form::GradeTooLowException("MINIMUM GRADE TO SIGN IS 150.") );
+			throw ( Form::GradeTooLowException("CREATION ERROR") );
 	}
 	catch ( const Form::GradeTooHighException &e )
 	{
@@ -39,11 +39,11 @@ Form::Form( std::string name, int minGradeToSign, int minGradeToExec ) : _formNa
 	{
 		if (minGradeToExec < 1)
 		{
-			throw ( Form::GradeTooHighException("MAXIMUM GRADE TO EXECUTE IS 1.") );
+			throw ( Form::GradeTooHighException("CREATION ERROR") );
 		}
 		if (minGradeToExec > 150)
 		{
-			throw ( Form::GradeTooLowException("MINIMUM GRADE TO EXEC IS 150.") );
+			throw ( Form::GradeTooLowException("CREATION ERROR") );
 		}
 	}
 	catch ( const Form::GradeTooHighException &e )
@@ -111,16 +111,37 @@ void	Form::beSigned( Bureaucrat obj )
 {
 	try
 	{
-		if (obj.getGrade() > this->_minGradeToSign)
-			throw ( Form::GradeTooHighException("BUREAUCRAT LEVEL TOO LOW TO SIGN!") );
+		if (obj.getGrade() > _minGradeToSign)
+			throw ( Form::GradeTooLowException("SIGNATURE ERROR LEVEL TOO LOW TO SIGN!") );
+		_isSigned = 1;
 	}
-	catch ( const Form::GradeTooHighException &e )
+	catch ( const Form::GradeTooLowException &e )
 	{
 		std::cerr << e.what() << std::endl;
-		return ;
-	}
-	if (obj.getGrade() <= this->_minGradeToSign && this->_isSigned == 0 && obj.getGrade() >= 1)
-	{
-		this->_isSigned = 1;
 	}
 }
+
+Form::GradeTooHighException::GradeTooHighException(const char *errortype)
+{
+	_msg = "FORM GRADE IS TOO LOW";
+	std::cout << " --- " << errortype << " --- " << std::endl;
+}
+
+const char *Form::GradeTooHighException::what() const throw()
+{
+	return _msg;
+}
+
+Form::GradeTooLowException::GradeTooLowException(const char *errortype)
+{
+	_msg = "FORM GRADE IS TOO HIGH";
+	std::cout << " --- " << errortype << " --- " << std::endl;
+}
+
+const char *Form::GradeTooLowException::what() const throw()
+{
+	return _msg;
+}
+
+Form::GradeTooHighException::~GradeTooHighException() throw() {}
+Form::GradeTooLowException::~GradeTooLowException() throw() {}

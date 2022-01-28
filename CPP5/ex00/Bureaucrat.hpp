@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 16:38:49 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/27 22:59:59 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/28 13:07:13 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ class	Bureaucrat
 			virtual ~GradeTooHighException() throw();
 			const char *what() const throw();
 	};
+	
 	class GradeTooLowException: virtual public std::exception
 	{
 		public:

@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 16:46:23 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/28 12:53:07 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/28 14:12:26 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,8 +112,9 @@ const char *Bureaucrat::GradeTooHighException::what() const throw()
 	return _msg;
 }
 
-Bureaucrat::GradeTooLowException::GradeTooLowException( const char *errortype ) : _msg("BUREAUCRAT GRADE IS TOO LOW!")
+Bureaucrat::GradeTooLowException::GradeTooLowException( const char *errortype )
 {
+	_msg = "BUREAUCRAT GRADE IS TOO LOW!";
 	std::cout << " --- " << errortype << " --- " << std::endl;
 }
 
