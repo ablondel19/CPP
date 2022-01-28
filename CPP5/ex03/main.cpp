@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 16:38:20 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/28 16:45:07 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/28 16:47:03 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ int		main(void)
 	rrf = someone.makeForm("robotomy request", "Bender");
 	Bureaucrat c("charlie", 1);
 	std::cout << c << std::endl;
-	std::cout << "__________________________________________" << std::endl;
-	RobotomyRequestForm f3("TARGET");
 	std::cout << *rrf << std::endl;
 	rrf->beSigned(c);
 	c.signForm(*rrf);
