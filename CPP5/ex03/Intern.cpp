@@ -6,7 +6,7 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 19:56:01 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/28 16:41:15 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/28 16:55:07 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ Form *Intern::makeForm(std::string formName, std::string target)
 	std::string	lvl[3] = { "shrubbery creation", "robotomy request", "presidential pardon" };
 	for (size_t i = 0; i < 3; i++)
 	{
-		if (formName.compare(lvl[i]) == 0)
+		if (formName == lvl[i])
 		{
 			std::cout << "Intern creates " << lvl[i] << std::endl;
 			return (fct[i])(target);
