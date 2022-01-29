@@ -6,41 +6,22 @@
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/29 12:37:38 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/29 13:01:02 by ablondel         ###   ########.fr       */
+/*   Updated: 2022/01/29 16:06:44 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 
-int random(int min, int max) //range : [min, max]
-{
-	 static bool first = true;
-	 if (first) 
-	 {  
-			srand( time(NULL) ); //seeding for the first time only!
-			first = false;
-	 }
-	 return min + rand() % (( max + 1 ) - min);
-}
-
 int		main(void)
 {
-	std::vector<int> mirror;
-	std::vector<int>::iterator it;
-	srand(time(NULL));
-	for (int i = 0; i < 10; i++)
-	{
-		int value = random(1, 100);
-		mirror.push_back(value);
-		std::cout << "[" << mirror[i] << "]";
-	}
-	std::cout << std::endl;
-	std::sort(mirror.begin(), mirror.end());
-	for (int i = 0; i < 9; i++)
-	{
-		std::cout << "[" << mirror[i] << "]";
-	}
-	std::cout << std::endl;
-	it = mirror.begin() + 1;
+	Span sp = Span(10000);
+	sp.addRange(-100000, 100000); // random numbers between min & max // size in constructor
+	//sp.addNumber(6);
+	//sp.addNumber(3);
+	//sp.addNumber(17);
+	//sp.addNumber(9);
+	//sp.addNumber(11);
+	std::cout << sp.shortestSpan() << std::endl;
+	std::cout << sp.longestSpan() << std::endl;
 	return 0;
 }
