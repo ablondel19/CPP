@@ -1,37 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ablondel <ablondel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/25 16:48:55 by ablondel          #+#    #+#             */
-/*   Updated: 2022/01/29 12:31:41 by ablondel         ###   ########.fr       */
+/*   Created: 2022/01/29 12:33:13 by ablondel          #+#    #+#             */
+/*   Updated: 2022/01/29 12:49:18 by ablondel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EASYFIND_HPP
-#define EASYFIND_HPP
+#ifndef SPAN_HPP
+#define SPAN_HPP
 #include <iostream>
-#include <algorithm>
 #include <vector>
+#include <algorithm>
 #include <limits>
+#include <array>
 
-template <typename T>
-int	easyfind( T data , int x)
+class	Span
 {
-	int n = sizeof(data);
-	std::vector<int> vect(data, data + n);
-	std::vector<int>::iterator it;
-	it = std::find (vect.begin(), vect.end(), x);
-	if (it != vect.end())
-	{
-	    std::cout << "Element found in container: " << *it << '\n';
-		return *it;
-	}
-	else
-	    std::cout << "Element not found in container\n";
-	return INT_MIN;
-}
+	private:
+		unsigned			_n;
+		std::vector<int>	_v;
+	public:
+		Span();
+		Span( unsigned n );
+		Span( const Span &obj );
+		Span &operator=( const Span &obj );
+		std::vector<int>	getVector( void ) const;
+		unsigned			getSize( void ) const;
+		void				addNumber( int value );
+		unsigned			shortestSpan( void );
+		unsigned			longestSpan( void );
+		~Span();
+};
 
 #endif
